@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MASTERMIND ALLIANCE PUBLISHING GROUP — Brand Development & Custom Apparel | Houston, TX</title>
+  <meta name="description" content="MASTERMIND ALLIANCE PUBLISHING GROUP - Custom-branded merchandise, apparel, and brand development. Located at 12170 Almeda Rd, Houston, TX. 24/7 service and appointment-based consultations." />
+  <meta name="theme-color" content="#0f1724" />
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+  <!-- Schema.org structured data for LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "MASTERMIND ALLIANCE PUBLISHING GROUP",
+    "alternateName": "MMAPG / MMAPGX",
+    "image": "https://via.placeholder.com/600x400.png?text=MMAPG",
+    "@id": "",
+    "url": "https://www.youtube.com/",
+    "telephone": "+1-832-483-1696",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "12170 Almeda Rd",
+      "addressLocality": "Houston",
+      "addressRegion": "TX",
+      "postalCode": "77045",
+      "addressCountry": "US"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"
+        ],
+        "opens": "00:00",
+        "closes": "23:59"
+      }
+    ],
+    "priceRange": "$$",
+    "sameAs": [
+      "https://www.youtube.com/"
+    ]
+  }
+  </script>
+
+  <style>
+    :root{
+      --bg:#071029;
+      --card:#071529;
+      --accent1:#7c3aed;
+      --accent2:#06b6d4;
+      --muted:#9aa4b2;
+      --glass: rgba(255,255,255,0.04);
+      --glass-2: rgba(255,255,255,0.02);
+      --success: #10b981;
+      --danger: #ef4444;
+      --radius: 14px;
+      --shadow-lg: 0 12px 40px rgba(2,6,23,0.7);
+      --shadow-sm: 0 6px 18px rgba(2,6,23,0.55);
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:
+        radial-gradient(1200px 400px at 10% 10%, rgba(124,58,237,0.08), transparent 12%),
+        radial-gradient(900px 300px at 90% 90%, rgba(6,182,212,0.06), transparent 12%),
+        var(--bg);
+      color:#e6eef8;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+      padding-bottom:60px;
+    }
+
+    a{color:inherit;text-decoration:none}
+
+    /* Skip link for accessibility */
+    .skip-link{
+      position:absolute;
+      left:12px;
+      top:12px;
+      background:var(--accent1);
+      color:white;
+      padding:8px 12px;
+      border-radius:8px;
+      transform:translateY(-120%);
+      transition:transform .18s ease;
+      z-index:9999;
+    }
+    .skip-link:focus{transform:none; outline:3px solid rgba(124,58,237,0.22)}
+
+    /* Header */
+    header{
+      width:100%;
+      backdrop-filter: blur(6px);
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      position:sticky;
+      top:0;
+      z-index:40;
+      box-shadow: var(--shadow-sm);
+      border-bottom: 1px solid rgba(255,255,255,0.02);
+    }
+    .nav{
+      max-width:1180px;
+      margin:0 auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      padding:12px 20px;
+    }
+    .brand{
+      display:flex;
+      gap:12px;
+      align-items:center;
+    }
+    .logo{
+      width:52px;height:52px;border-radius:12px;
+      display:grid;place-items:center;
+      background:linear-gradient(135deg,var(--accent1),var(--accent2));
+      box-shadow: 0 6px 22px rgba(6,182,212,0.08);
+      color:white;font-family:Montserrat, Inter, sans-serif;
+      font-weight:800;
+    }
+    .brand h1{
+      margin:0;font-size:15px;line-height:1;
+      letter-spacing:0.2px;
+    }
+    .brand p{margin:0;font-size:12px;color:var(--muted)}
+
+    .nav-actions{display:flex;gap:12px;align-items:center}
+    .btn{
+      background:linear-gradient(90deg,var(--accent1),var(--accent2));
+      color:white;padding:10px 14px;border-radius:12px;border:0;
+      cursor:pointer;font-weight:600;box-shadow:var(--shadow-sm);transition:transform .12s ease,box-shadow .12s;
+    }
+    .btn.ghost{
+      background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--accent2);padding:8px 12px;
+      box-shadow:none;
+    }
+    .btn:active{transform:translateY(1px)}
+    .phone{display:flex;align-items:center;gap:10px;background:var(--glass);padding:8px 12px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+
+    /* Hero */
+    .hero{
+      max-width:1180px;margin:28px auto;padding:28px 20px;display:grid;grid-template-columns:1fr 420px;gap:22px;
+    }
+    .hero-card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      padding:28px;border-radius:18px;box-shadow:var(--shadow-lg);border:1px solid rgba(255,255,255,0.03);
+      overflow:hidden;
+    }
+    .hero-title{
+      font-family:Montserrat, Inter, sans-serif;font-size:28px;margin:0 0 8px 0;
+      letter-spacing:-0.6px;color:linear-gradient(90deg,#fff,#e6f0ff);
+    }
+    .hero-lead{color:var(--muted);margin:0 0 18px 0}
+    .badges{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}
+    .badge{background:linear-gradient(90deg, rgba(124,58,237,0.12), rgba(6,182,212,0.08));color:#dbeafe;padding:8px 12px;border-radius:999px;font-weight:600;font-size:13px}
+
+    .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+    .cta-ghost{background:transparent;border:1px solid rgba(255,255,255,0.04);padding:10px 12px;border-radius:12px;color:var(--muted)}
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+    .feature{
+      background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.01));
+      border-radius:12px;padding:14px;border:1px solid rgba(255,255,255,0.02);display:flex;gap:10px;align-items:center;
+    }
+    .feature svg{width:40px;height:40px;flex-shrink:0}
+
+    /* Right panel */
+    .panel{
+      position:relative;padding:18px;border-radius:18px;background:linear-gradient(180deg, rgba(255,255,255,0.015), transparent);
+      border:1px solid rgba(255,255,255,0.02);
+      height:100%;
+      display:flex;flex-direction:column;gap:12px;
+    }
+    .map{
+      flex:1;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.03);
+      background:
+        linear-gradient(180deg, rgba(124,58,237,0.04), rgba(6,182,212,0.02));
+      display:grid;place-items:center;color:var(--muted);font-weight:600;
+    }
+    .panel .meta{display:flex;flex-direction:column;gap:8px}
+    .meta-row{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .meta-left{display:flex;gap:10px;align-items:center}
+    .meta-left p{margin:0}
+    .pill{background:rgba(255,255,255,0.03);padding:8px 10px;border-radius:999px;border:1px solid rgba(255,255,255,0.02);font-weight:700}
+
+    /* Services */
+    .section{max-width:1180px;margin:24px auto;padding:0 20px}
+    .section-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      padding:18px;border-radius:16px;border:1px solid rgba(255,255,255,0.02);
+      box-shadow:0 10px 30px rgba(2,6,23,0.45);transition:transform .18s ease, box-shadow .18s ease;
+    }
+    .card:hover{transform:translateY(-8px);box-shadow:0 22px 60px rgba(2,6,23,0.55)}
+    .product{
+      display:flex;gap:14px;align-items:center;
+    }
+    .product-visual{
+      width:96px;height:96px;border-radius:12px;background:linear-gradient(135deg,#11182720,#00000010);
+      display:grid;place-items:center;font-weight:800;font-family:Montserrat;
+      letter-spacing:1px;color:white;border:1px solid rgba(255,255,255,0.03);
+      transition:transform .28s cubic-bezier(.2,.9,.25,1);
+    }
+    .product:hover .product-visual{transform:translateY(-6px) rotate(-1deg) scale(1.02)}
+
+    /* Testimonials */
+    .testimonials{margin-top:18px;display:flex;flex-direction:column;gap:12px}
+    .quote{background:linear-gradient(180deg, rgba(255,255,255,0.015), transparent);padding:16px;border-radius:12px;border:1px solid rgba(255,255,255,0.02);display:flex;gap:12px;align-items:flex-start}
+    .quote p{margin:0;color:var(--muted)}
+    .stars{color:goldenrod;font-weight:700}
+
+    /* Footer */
+    footer{max-width:1180px;margin:28px auto;padding:20px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);border:1px solid rgba(255,255,255,0.02);display:flex;justify-content:space-between;align-items:center;gap:12px}
+    footer p{margin:0;color:var(--muted)}
+
+    /* Modal */
+    .modal-backdrop{
+      position:fixed;inset:0;background:linear-gradient(180deg, rgba(2,6,23,0.7), rgba(2,6,23,0.85));
+      display:none;align-items:center;justify-content:center;z-index:9998;padding:20px;
+    }
+    .modal{
+      max-width:720px;width:100%;background:linear-gradient(180deg,#071029,#071427);border-radius:14px;padding:18px;border:1px solid rgba(255,255,255,0.03);
+      box-shadow:0 18px 60px rgba(2,6,23,0.8);
+    }
+    .close{background:transparent;border:0;color:var(--muted);font-weight:700;cursor:pointer}
+
+    /* Forms */
+    label{display:block;font-size:13px;color:var(--muted);margin-bottom:6px}
+    input[type="text"], input[type="tel"], input[type="email"], textarea, select{
+      width:100%;padding:10px 12px;border-radius:10px;background:transparent;border:1px solid rgba(255,255,255,0.04);
+      color: #e8f0ff;outline:none;font-size:14px;
+    }
+    textarea{min-height:110px;resize:vertical}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .form-actions{display:flex;gap:10px;justify-content:flex-end;margin-top:12px}
+
+    /* Toast */
+    .toast{
+      position:fixed;right:20px;bottom:20px;background:linear-gradient(90deg,var(--accent1),var(--accent2));color:white;padding:12px 16px;border-radius:12px;box-shadow:var(--shadow-sm);display:none;z-index:9999;
+    }
+
+    /* Responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr; padding-bottom:12px}
+      .section-grid{grid-template-columns:repeat(2,1fr)}
+      .form-row{grid-template-columns:1fr}
+      .nav{padding:8px 16px}
+    }
+    @media (max-width:640px){
+      .brand h1{font-size:14px}
+      .hero{padding:18px 14px}
+      .section-grid{grid-template-columns:1fr}
+      .hero-card{padding:18px}
+      .panel{padding:12px}
+      .logo{width:44px;height:44px}
+      .product-visual{width:78px;height:78px}
+      .badges{gap:8px}
+      footer{flex-direction:column;align-items:flex-start;gap:10px}
+    }
+
+    /* subtle animations */
+    @keyframes floaty {
+      0%{transform:translateY(0)}
+      50%{transform:translateY(-6px)}
+      100%{transform:translateY(0)}
+    }
+    .floaty{animation:floaty 6s ease-in-out infinite}
+
+    /* focus styles */
+    button:focus,input:focus,select:focus,textarea:focus{box-shadow:0 6px 20px rgba(124,58,237,0.18);border:1px solid rgba(124,58,237,0.28)}
+    .accessible-contrast{filter:contrast(1.08) saturate(1.1)}
+  </style>
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header role="banner" aria-label="Main header">
+    <nav class="nav" role="navigation" aria-label="Primary navigation">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">MM</div>
+        <div>
+          <h1>MASTERMIND ALLIANCE</h1>
+          <p>Publishing Group · Houston, TX</p>
+        </div>
+      </div>
+
+      <div class="nav-actions">
+        <div class="phone" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="opacity:0.95"><path d="M21 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 3.08 5.18 2 2 0 0 1 5 3h3a2 2 0 0 1 2 1.72c.12 1.05.33 2.09.61 3.09a2 2 0 0 1-.45 1.95l-1.27 1.27a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 1.95-.45c1 .28 2.04.49 3.09.61A2 2 0 0 1 21 16.92z" stroke="white" stroke-opacity="0.88" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          <div style="display:flex;flex-direction:column;line-height:1">
+            <a href="tel:+18324831696" style="color:white;font-weight:700;font-size:14px">+1 (832) 483-1696</a>
+            <span style="font-size:12px;color:var(--muted)">Available 24/7</span>
+          </div>
+        </div>
+
+        <button class="btn" id="bookBtn" aria-haspopup="dialog">Book Appointment</button>
+        <a class="btn ghost" id="orderBtn">Order Apparel</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section class="hero" aria-labelledby="heroHeading" role="region">
+      <div class="hero-card" aria-hidden="false">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+          <div>
+            <h2 id="heroHeading" class="hero-title">Mastermind Alliance Publishing Group</h2>
+            <p class="hero-lead">Brand development, custom-branded merchandise, and premium apparel — locally produced in Houston, TX. Flexible appointments & accessible entrance.</p>
+            <div class="badges" aria-hidden="true">
+              <div class="badge">24/7 Service</div>
+              <div class="badge">Accessible Entrance</div>
+              <div class="badge">Custom Snapbacks & Hoodies</div>
+            </div>
+          </div>
+          <div style="min-width:120px;text-align:right">
+            <div style="font-size:12px;color:var(--muted)">Location</div>
+            <div style="font-weight:800">12170 Almeda Rd, Houston, TX 77045</div>
+            <div style="margin-top:8px">
+              <a href="https://www.google.com/maps/search/?api=1&query=12170+Almeda+Rd+Houston+TX+77045" target="_blank" class="cta-ghost" style="font-weight:700">Get Directions →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="features" aria-hidden="true">
+          <div class="feature">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 2v20" stroke="white" stroke-opacity="0.9" stroke-width="1.2" stroke-linecap="round"/><path d="M5 8h14" stroke="white" stroke-opacity="0.9" stroke-width="1.2" stroke-linecap="round"/></svg>
+            <div>
+              <div style="font-weight:700">Brand Development</div>
+              <div style="font-size:13px;color:var(--muted)">Logo systems, visual identity, and brand strategy.</div>
+            </div>
+          </div>
+
+          <div class="feature">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M3 7h18M7 7v14a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V7" stroke="white" stroke-opacity="0.9" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div>
+              <div style="font-weight:700">Custom Apparel</div>
+              <div style="font-size:13px;color:var(--muted)">Snapback hats, hoodies, embroidered & printed collections.</div>
+            </div>
+          </div>
+
+          <div class="feature">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 20v-6" stroke="white" stroke-opacity="0.9" stroke-width="1.2" stroke-linecap="round"/><path d="M6 10h12" stroke="white" stroke-opacity="0.9" stroke-width="1.2" stroke-linecap="round"/></svg>
+            <div>
+              <div style="font-weight:700">Flexible Hours</div>
+              <div style="font-size:13px;color:var(--muted)">Open 24/7 with appointment options to suit your schedule.</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-top:18px;gap:12px;flex-wrap:wrap">
+          <div style="display:flex;gap:10px;align-items:center">
+            <button class="btn" id="viewCollection">View Collection</button>
+            <button class="cta-ghost" id="watchVideo" style="padding:10px 12px">YouTube Channel</button>
+          </div>
+
+          <div style="color:var(--muted);font-weight:600">
+            <span class="pill">By Appointment • Accessible Entrance</span>
+          </div>
+        </div>
+
+        <div class="testimonials" aria-live="polite" style="margin-top:18px">
+          <div style="display:flex;align-items:center;justify-content:space-between">
+            <strong style="font-size:13px">Recent Reviews</strong>
+            <div style="font-size:13px;color:var(--muted)">4.8 / 5 (based on recent reviews)</div>
+          </div>
+
+          <div id="testimonialTrack" style="display:flex;gap:12px;overflow:hidden;padding-top:8px">
+            <div class="quote" style="min-width:320px;max-width:420px">
+              <div style="width:48px;height:48px;border-radius:10px;background:linear-gradient(90deg,var(--accent1),var(--accent2));display:grid;place-items:center;font-weight:800">KT</div>
+              <div>
+                <div style="font-weight:700">King Titanium — Hoodie Drop</div>
+                <div class="stars">★★★★★</div>
+                <p>Top-tier quality and super responsive service. The logos came out crisp and the fit is excellent.</p>
+              </div>
+            </div>
+
+            <div class="quote" style="min-width:320px;max-width:420px">
+              <div style="width:48px;height:48px;border-radius:10px;background:linear-gradient(90deg,#ff7ab6,#ffb86b);display:grid;place-items:center;font-weight:800">MM</div>
+              <div>
+                <div style="font-weight:700">MMAPGX Snapbacks</div>
+                <div class="stars">★★★★★</div>
+                <p>Fast turnaround and they accommodated our custom embroidery request with ease. Highly recommend.</p>
+              </div>
+            </div>
+
+            <div class="quote" style="min-width:320px;max-width:420px">
+              <div style="width:48px;height:48px;border-radius:10px;background:linear-gradient(90deg,#6ee7b7,#34d399);display:grid;place-items:center;font-weight:800">JS</div>
+              <div>
+                <div style="font-weight:700">Excellent Accessibility</div>
+                <div class="stars">★★★★☆</div>
+                <p>Accessible entrance and appointment scheduling was simple — the team was professional and friendly.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <aside class="panel" aria-label="Contact & Location panel">
+        <div style="display:flex;align-items:center;gap:12px">
+          <div style="width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,var(--accent1),var(--accent2));display:grid;place-items:center;font-weight:900;font-family:Montserrat">MM</div>
+          <div>
+            <div style="font-weight:800">MASTERMIND ALLIANCE PUBLISHING GROUP</div>
+            <div style="font-size:13px;color:var(--muted)">Multi-service business center — Accessible entrance & by appointment</div>
+          </div>
+        </div>
+
+        <div style="border-top:1px dashed rgba(255,255,255,0.02);padding-top:12px">
+          <div class="meta">
+            <div class="meta-row">
+              <div class="meta-left">
+                <div style="width:42px;height:42;border-radius:10px;background:rgba(255,255,255,0.02);display:grid;place-items:center">📍</div>
+                <div>
+                  <div style="font-weight:700">12170 Almeda Rd</div>
+                  <div style="font-size:13px;color:var(--muted)">Houston, TX 77045</div>
+                </div>
+              </div>
+              <a class="pill" href="https://maps.google.com/?q=12170+Almeda+Rd+Houston+TX+77045" target="_blank">Open map</a>
+            </div>
+
+            <div class="meta-row" style="margin-top:8px">
+              <div class="meta-left">
+                <div style="width:42px;height:42;border-radius:10px;background:rgba(255,255,255,0.02);display:grid;place-items:center">⏱️</div>
+                <div>
+                  <div style="font-weight:700">Operational Hours</div>
+                  <div style="font-size:13px;color:var(--muted)">Open 24 hours • By appointment</div>
+                </div>
+              </div>
+              <div style="display:flex;flex-direction:column;align-items:flex-end">
+                <span class="pill" style="background:linear-gradient(90deg,#0ea5a4,#06b6d4);color:white">24 / 7</span>
+                <small style="font-size:12px;color:var(--muted);margin-top:8px">Appointments encouraged</small>
+              </div>
+            </div>
+
+            <div class="meta-row" style="margin-top:8px">
+              <div class="meta-left">
+                <div style="width:42px;height:42;border-radius:10px;background:rgba(255,255,255,0.02);display:grid;place-items:center">📞</div>
+                <div>
+                  <div style="font-weight:700"><a href="tel:+18324831696" style="color:inherit">+1 (832) 483-1696</a></div>
+                  <div style="font-size:13px;color:var(--muted)">Prefer text? Use the same number</div>
+                </div>
+              </div>
+              <div>
+                <button class="btn ghost" id="callBtn" onclick="window.location.href='tel:+18324831696'">Call Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="border-top:1px dashed rgba(255,255,255,0.02);padding-top:12px;display:flex;gap:12px;align-items:center">
+          <div style="flex:1">
+            <div style="font-weight:700">Featured Collection</div>
+            <div style="font-size:13px;color:var(--muted)">Limited drop — "King Titanium" hoodies & MMAPGX snapbacks.</div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:8px;align-items:center">
+            <div class="product-visual floaty" aria-hidden="true" style="width:88px;height:88px;border-radius:12px;font-family:Montserrat">KT</div>
+            <button class="btn" id="orderNow">Order</button>
+          </div>
+        </div>
+
+        <div style="margin-top:auto;border-top:1px dashed rgba(255,255,255,0.02);padding-top:12px;display:flex;gap:8px;align-items:center;justify-content:space-between">
+          <div style="display:flex;gap:8px;align-items:center">
+            <div style="width:40px;height:40;border-radius:10px;background:rgba(255,255,255,0.02);display:grid;place-items:center">▶️</div>
+            <div>
+              <div style="font-weight:700">YouTube Channel</div>
+              <div style="font-size:13px;color:var(--muted)">Showcasing recent product drops & behind-the-scenes.</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:8px">
+            <button id="watchBtn" class="btn ghost">Watch</button>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section" aria-labelledby="servicesHeading">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px">
+        <h3 id="servicesHeading" style="margin:0;font-size:18px">Services & Products</h3>
+        <div style="color:var(--muted);font-size:13px">High-quality printing, embroidery & full production</div>
+      </div>
+
+      <div class="section-grid" role="list">
+        <article class="card" role="listitem" aria-label="Custom Apparel">
+          <div class="product">
+            <div class="product-visual" aria-hidden="true" style="background:linear-gradient(135deg,#111827,#0f1724);">MMAP</div>
+            <div>
+              <h4 style="margin:0">Custom Hoodies — "King Titanium"</h4>
+              <div style="font-size:13px;color:var(--muted);margin-top:6px">Premium fleece, direct-to-garment prints or embroidered crests. Bulk & single orders available.</div>
+              <div style="display:flex;gap:8px;margin-top:12px">
+                <button class="btn" data-product="King Titanium Hoodie">Customize</button>
+                <button class="cta-ghost" data-preview="hoodie">Preview</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" role="listitem" aria-label="Snapback Hats">
+          <div class="product">
+            <div class="product-visual" aria-hidden="true" style="background:linear-gradient(135deg,#6d28d9,#0891b2);">MMX</div>
+            <div>
+              <h4 style="margin:0">Snapback Hats — MMAPGX</h4>
+              <div style="font-size:13px;color:var(--muted);margin-top:6px">Structured & flat-brim options, embroidered logos with premium threads.</div>
+              <div style="display:flex;gap:8px;margin-top:12px">
+                <button class="btn" data-product="MMAPGX Snapback">Customize</button>
+                <button class="cta-ghost" data-preview="snapback">Preview</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" role="listitem" aria-label="Brand Development">
+          <div style="display:flex;gap:14px;align-items:center">
+            <div style="width:96px;height:96px;border-radius:12px;background:linear-gradient(135deg,#ef4444,#f97316);display:grid;place-items:center;font-weight:900">ID</div>
+            <div>
+              <h4 style="margin:0">Brand Development</h4>
+              <div style="font-size:13px;color:var(--muted);margin-top:6px">Logo design, visual identity systems, and packaging design to help your brand stand out.</div>
+              <div style="display:flex;gap:8px;margin-top:12px">
+                <button class="btn" id="brandIntro">Start Project</button>
+                <button class="cta-ghost" id="downloadKit">Brand Kit</button>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="galleryHeading" style="margin-top:18px">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px">
+        <h3 id="galleryHeading" style="margin:0;font-size:18px">Product Gallery</h3>
+        <div style="color:var(--muted);font-size:13px">Swipe to preview items</div>
+      </div>
+
+      <div style="overflow:hidden;border-radius:16px;border:1px solid rgba(255,255,255,0.02);padding:16px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent)">
+        <div id="carousel" style="display:flex;gap:14px;transition:transform .6s cubic-bezier(.2,.9,.25,1);will-change:transform">
+          <!-- slide 1 -->
+          <div style="min-width:320px;border-radius:12px;padding:12px;background:linear-gradient(180deg,#071427,#071a35);border:1px solid rgba(255,255,255,0.02)">
+            <div style="display:flex;gap:12px">
+              <div style="width:140px;height:140px;border-radius:12px;background:linear-gradient(135deg,#6d28d9,#0891b2);display:grid;place-items:center;font-weight:900;font-family:Montserrat">MMAPGX</div>
+              <div style="flex:1">
+                <div style="font-weight:800">MMAPGX Snapback</div>
+                <div style="font-size:13px;color:var(--muted);margin-top:8px">Embroidered logo, structured fit, available in black, navy, and grey.</div>
+                <div style="display:flex;gap:8px;margin-top:14px">
+                  <button class="btn" data-product="MMAPGX Snapback">Order</button>
+                  <button class="cta-ghost" data-preview="snapback">View</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- slide 2 -->
+          <div style="min-width:320px;border-radius:12px;padding:12px;background:linear-gradient(180deg,#071427,#071a35);border:1px solid rgba(255,255,255,0.02)">
+            <div style="display:flex;gap:12px">
+              <div style="width:140px;height:140px;border-radius:12px;background:linear-gradient(135deg,#ff7ab6,#ffb86b);display:grid;place-items:center;font-weight:900;font-family:Montserrat">KT</div>
+              <div style="flex:1">
+                <div style="font-weight:800">King Titanium Hoodie</div>
+                <div style="font-size:13px;color:var(--muted);margin-top:8px">Soft fleece, high-quality print. Sizes S–3XL. Custom tags available.</div>
+                <div style="display:flex;gap:8px;margin-top:14px">
+                  <button class="btn" data-product="King Titanium Hoodie">Order</button>
+                  <button class="cta-ghost" data-preview="hoodie">View</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- slide 3 -->
+          <div style="min-width:320px;border-radius:12px;padding:12px;background:linear-gradient(180deg,#071427,#071a35);border:1px solid rgba(255,255,255,0.02)">
+            <div style="display:flex;gap:12px">
+              <div style="width:140px;height:140px;border-radius:12px;background:linear-gradient(135deg,#6ee7b7,#34d399);display:grid;place-items:center;font-weight:900;font-family:Montserrat">Custom</div>
+              <div style="flex:1">
+                <div style="font-weight:800">Custom Drops</div>
+                <div style="font-size:13px;color:var(--muted);margin-top:8px">Brand campaigns, event merchandise, and limited drop management.</div>
+                <div style="display:flex;gap:8px;margin-top:14px">
+                  <button class="btn" id="contactForDrop">Inquire</button>
+                  <button class="cta-ghost" data-preview="custom">Details</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div style="display:flex;justify-content:center;gap:12px;margin-top:12px">
+          <button class="cta-ghost" id="prevSlide" aria-label="Previous slide">◀</button>
+          <button class="cta-ghost" id="nextSlide" aria-label="Next slide">▶</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer role="contentinfo">
+    <div>
+      <p style="font-weight:800">MASTERMIND ALLIANCE PUBLISHING GROUP</p>
+      <p style="font-size:13px;color:var(--muted);margin-top:6px">12170 Almeda Rd, Houston, TX 77045 • <a href="tel:+18324831696">+1 (832) 483-1696</a></p>
+    </div>
+    <div style="display:flex;gap:10px;align-items:center">
+      <a class="cta-ghost" href="https://www.youtube.com/" target="_blank">YouTube Channel</a>
+      <a class="cta-ghost" href="https://maps.google.com/?q=12170+Almeda+Rd+Houston+TX+77045" target="_blank">Directions</a>
+    </div>
+  </footer>
+
+  <!-- Modal for booking & ordering -->
+  <div class="modal-backdrop" id="modalBackdrop" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal" role="document">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+        <div>
+          <h3 id="modalTitle" style="margin:0">Book an Appointment</h3>
+          <div style="font-size:13px;color:var(--muted);margin-top:6px">We will follow up via phone or text to confirm your time slot.</div>
+        </div>
+        <button class="close" id="closeModal" aria-label="Close dialog">✕</button>
+      </div>
+
+      <form id="bookingForm" style="margin-top:12px">
+        <div class="form-row">
+          <div>
+            <label for="name">Full name</label>
+            <input type="text" id="name" name="name" placeholder="Jane Doe" required>
+          </div>
+          <div>
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" placeholder="+1 (___) ___-____" required>
+          </div>
+        </div>
+
+        <div style="margin-top:10px">
+          <label for="service">Service</label>
+          <select id="service" name="service">
+            <option>Brand consultation</option>
+            <option>Apparel order / custom piece</option>
+            <option>Bulk production inquiry</option>
+            <option>Studio visit / tour</option>
+          </select>
+        </div>
+
+        <div style="margin-top:10px">
+          <label for="notes">Notes (optional)</label>
+          <textarea id="notes" name="notes" placeholder="Tell us about your project or preferred time..."></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button type="button" class="cta-ghost" id="modalCancel">Cancel</button>
+          <button type="submit" class="btn">Request Appointment</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Lightbox for YouTube -->
+  <div class="modal-backdrop" id="videoBackdrop" role="dialog" aria-hidden="true" style="display:none;">
+    <div class="modal" style="max-width:920px;">
+      <div style="display:flex;align-items:center;justify-content:space-between">
+        <h3 style="margin:0">Recent Drop — YouTube Preview</h3>
+        <button class="close" id="closeVideo">✕</button>
+      </div>
+      <div style="margin-top:12px">
+        <div style="position:relative;padding-top:56.25%;border-radius:10px;overflow:hidden;background:black">
+          <iframe id="ytPlayer" style="position:absolute;inset:0;border:0" src="https://www.youtube.com/embed/?listType=search&list=MMAPGX" title="MMAPG YouTube" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast">Request sent — We'll be in touch shortly.</div>
+
+  <script>
+    // Basic interactivity and accessible focus management
+    (function(){
+      const modalBackdrop = document.getElementById('modalBackdrop');
+      const videoBackdrop = document.getElementById('videoBackdrop');
+      const bookBtn = document.getElementById('bookBtn');
+      const orderBtn = document.getElementById('orderBtn');
+      const orderNow = document.getElementById('orderNow');
+      const watchBtn = document.getElementById('watchBtn');
+      const watchVideo = document.getElementById('watchVideo');
+      const closeModal = document.getElementById('closeModal');
+      const closeVideo = document.getElementById('closeVideo');
+      const modalCancel = document.getElementById('modalCancel');
+      const bookingForm = document.getElementById('bookingForm');
+      const toast = document.getElementById('toast');
+      const modalTitle = document.getElementById('modalTitle');
+
+      // open booking modal
+      function openBooking(title){
+        modalTitle.textContent = title || 'Book an Appointment';
+        modalBackdrop.style.display = 'flex';
+        modalBackdrop.setAttribute('aria-hidden','false');
+        document.body.style.overflow = 'hidden';
+        // focus first element
+        setTimeout(()=>document.getElementById('name').focus(),80);
+      }
+      function closeBooking(){
+        modalBackdrop.style.display = 'none';
+        modalBackdrop.setAttribute('aria-hidden','true');
+        document.body.style.overflow = '';
+      }
+
+      bookBtn.addEventListener('click', ()=> openBooking('Book an Appointment'));
+      document.getElementById('brandIntro').addEventListener('click', ()=> openBooking('Start a Brand Project'));
+      document.querySelectorAll('.btn[data-product]').forEach(b=>{
+        b.addEventListener('click', (e)=>{
+          const p = e.currentTarget.getAttribute('data-product') || 'Custom Order';
+          openBooking('Order — ' + p);
+        })
+      });
+
+      orderBtn.addEventListener('click', ()=> openBooking('Order Apparel'));
+      orderNow.addEventListener('click', ()=> openBooking('Order Apparel'));
+
+      closeModal.addEventListener('click', closeBooking);
+      modalCancel.addEventListener('click', closeBooking);
+
+      bookingForm.addEventListener('submit', (e)=>{
+        e.preventDefault();
+        // simulate network
+        closeBooking();
+        toast.style.display = 'block';
+        setTimeout(()=> toast.style.display='none', 4200);
+      });
+
+      // video lightbox
+      function openVideo(){
+        videoBackdrop.style.display = 'flex';
+        videoBackdrop.setAttribute('aria-hidden','false');
+        document.body.style.overflow='hidden';
+      }
+      function closeVideoBox(){
+        videoBackdrop.style.display = 'none';
+        videoBackdrop.setAttribute('aria-hidden','true');
+        document.body.style.overflow='';
+        const iframe = document.getElementById('ytPlayer');
+        // stop video by resetting src
+        iframe.src = iframe.src;
+      }
+
+      watchBtn.addEventListener('click', openVideo);
+      watchVideo.addEventListener('click', openVideo);
+      closeVideo.addEventListener('click', closeVideoBox);
+
+      // click outside to close modal (backdrop)
+      [modalBackdrop, videoBackdrop].forEach(back => {
+        back.addEventListener('click', (e)=>{
+          if(e.target === back) {
+            Array.from(back.children).forEach(child => {
+              if(child.querySelector('form')) closeBooking();
+              if(child.querySelector('#ytPlayer')) closeVideoBox();
+            })
+          }
+        });
+      });
+
+      // Carousel logic
+      const carousel = document.getElementById('carousel');
+      const prev = document.getElementById('prevSlide');
+      const next = document.getElementById('nextSlide');
+      let index = 0;
+      const slides = carousel.children;
+      const total = slides.length;
+
+      function updateCarousel(){
+        const width = slides[0].getBoundingClientRect().width + 14; // gap
+        carousel.style.transform = 'translateX(' + (-width * index) + 'px)';
+      }
+      next.addEventListener('click', ()=> { index = (index + 1) % total; updateCarousel(); });
+      prev.addEventListener('click', ()=> { index = (index - 1 + total) % total; updateCarousel(); });
+
+      // autoplay carousel
+      let autoplay = setInterval(()=>{ index = (index + 1) % total; updateCarousel(); }, 4200);
+      [next, prev].forEach(btn => btn.addEventListener('click', ()=> { clearInterval(autoplay); autoplay = setInterval(()=>{ index = (index + 1) % total; updateCarousel(); }, 4200); }));
+
+      // testimonial auto-scroll
+      const track = document.getElementById('testimonialTrack');
+      let tIndex = 0;
+      function autoTestimonial(){
+        const w = track.children[0].getBoundingClientRect().width + 12;
+        tIndex = (tIndex + 1) % track.children.length;
+        track.style.transform = 'translateX(' + (-w * tIndex) + 'px)';
+      }
+      setInterval(autoTestimonial, 5200);
+
+      // keyboard accessibility: Esc to close modals
+      window.addEventListener('keydown', (e)=>{
+        if(e.key === 'Escape'){
+          if(modalBackdrop.style.display === 'flex') closeBooking();
+          if(videoBackdrop.style.display === 'flex') closeVideoBox();
+        }
+      });
+
+      // preview buttons - simple microinteraction
+      document.querySelectorAll('[data-preview]').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const what = e.currentTarget.getAttribute('data-preview');
+          // show toast with preview
+          toast.textContent = 'Preview: ' + what + ' (interactive preview disabled in demo)';
+          toast.style.display = 'block';
+          setTimeout(()=> { toast.style.display='none'; toast.textContent = 'Request sent — We\\'ll be in touch shortly.' }, 2600);
+        });
+      });
+
+      // simple tilt effect for product visuals
+      document.querySelectorAll('.product-visual').forEach(el=>{
+        el.addEventListener('mousemove', (ev)=>{
+          const r = el.getBoundingClientRect();
+          const x = (ev.clientX - r.left) / r.width - 0.5;
+          const y = (ev.clientY - r.top) / r.height - 0.5;
+          el.style.transform = `rotateX(${ -y * 6 }deg) rotateY(${ x * 10 }deg) translateZ(6px)`;
+        });
+        el.addEventListener('mouseleave', ()=> el.style.transform = 'rotateX(0) rotateY(0) translateZ(0)');
+      });
+
+      // privacy: don't allow accidental drag of images (none present) but ensure links open in new window where necessary
+      document.querySelectorAll('a[target="_blank"]').forEach(a => a.rel = 'noopener noreferrer');
+
+      // micro-analytics: log interactions to console (simulate)
+      ['bookBtn','orderNow','watchBtn','viewCollection'].forEach(id=>{
+        if(document.getElementById(id)) document.getElementById(id).addEventListener('click', ()=>console.log('interaction:', id));
+      });
+
+      // Ensure focus outlines for keyboard users
+      let mouseDown = false;
+      document.addEventListener('mousedown', ()=> mouseDown = true);
+      document.addEventListener('keydown', ()=> mouseDown = false);
+      document.addEventListener('focusin', (e)=>{
+        if(mouseDown) e.target.classList.add('no-focus-ring');
+        else e.target.classList.remove('no-focus-ring');
+      });
+
+    })();
+  </script>
+</body>
+</html>
