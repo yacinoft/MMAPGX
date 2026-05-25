@@ -1,838 +1,1426 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>MASTERMIND ALLIANCE PUBLISHING GROUP — Brand Development & Custom Apparel | Houston, TX</title>
-  <meta name="description" content="MASTERMIND ALLIANCE PUBLISHING GROUP - Custom-branded merchandise, apparel, and brand development. Located at 12170 Almeda Rd, Houston, TX. 24/7 service and appointment-based consultations." />
-  <meta name="theme-color" content="#0f1724" />
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
-  <!-- Schema.org structured data for LocalBusiness -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "MASTERMIND ALLIANCE PUBLISHING GROUP",
-    "alternateName": "MMAPG / MMAPGX",
-    "image": "https://via.placeholder.com/600x400.png?text=MMAPG",
-    "@id": "",
-    "url": "https://www.youtube.com/",
-    "telephone": "+1-832-483-1696",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "12170 Almeda Rd",
-      "addressLocality": "Houston",
-      "addressRegion": "TX",
-      "postalCode": "77045",
-      "addressCountry": "US"
-    },
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"
-        ],
-        "opens": "00:00",
-        "closes": "23:59"
-      }
-    ],
-    "priceRange": "$$",
-    "sameAs": [
-      "https://www.youtube.com/"
-    ]
-  }
-  </script>
-
-  <style>
-    :root{
-      --bg:#071029;
-      --card:#071529;
-      --accent1:#7c3aed;
-      --accent2:#06b6d4;
-      --muted:#9aa4b2;
-      --glass: rgba(255,255,255,0.04);
-      --glass-2: rgba(255,255,255,0.02);
-      --success: #10b981;
-      --danger: #ef4444;
-      --radius: 14px;
-      --shadow-lg: 0 12px 40px rgba(2,6,23,0.7);
-      --shadow-sm: 0 6px 18px rgba(2,6,23,0.55);
-      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    }
-
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      background:
-        radial-gradient(1200px 400px at 10% 10%, rgba(124,58,237,0.08), transparent 12%),
-        radial-gradient(900px 300px at 90% 90%, rgba(6,182,212,0.06), transparent 12%),
-        var(--bg);
-      color:#e6eef8;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.45;
-      padding-bottom:60px;
-    }
-
-    a{color:inherit;text-decoration:none}
-
-    /* Skip link for accessibility */
-    .skip-link{
-      position:absolute;
-      left:12px;
-      top:12px;
-      background:var(--accent1);
-      color:white;
-      padding:8px 12px;
-      border-radius:8px;
-      transform:translateY(-120%);
-      transition:transform .18s ease;
-      z-index:9999;
-    }
-    .skip-link:focus{transform:none; outline:3px solid rgba(124,58,237,0.22)}
-
-    /* Header */
-    header{
-      width:100%;
-      backdrop-filter: blur(6px);
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      position:sticky;
-      top:0;
-      z-index:40;
-      box-shadow: var(--shadow-sm);
-      border-bottom: 1px solid rgba(255,255,255,0.02);
-    }
-    .nav{
-      max-width:1180px;
-      margin:0 auto;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:18px;
-      padding:12px 20px;
-    }
-    .brand{
-      display:flex;
-      gap:12px;
-      align-items:center;
-    }
-    .logo{
-      width:52px;height:52px;border-radius:12px;
-      display:grid;place-items:center;
-      background:linear-gradient(135deg,var(--accent1),var(--accent2));
-      box-shadow: 0 6px 22px rgba(6,182,212,0.08);
-      color:white;font-family:Montserrat, Inter, sans-serif;
-      font-weight:800;
-    }
-    .brand h1{
-      margin:0;font-size:15px;line-height:1;
-      letter-spacing:0.2px;
-    }
-    .brand p{margin:0;font-size:12px;color:var(--muted)}
-
-    .nav-actions{display:flex;gap:12px;align-items:center}
-    .btn{
-      background:linear-gradient(90deg,var(--accent1),var(--accent2));
-      color:white;padding:10px 14px;border-radius:12px;border:0;
-      cursor:pointer;font-weight:600;box-shadow:var(--shadow-sm);transition:transform .12s ease,box-shadow .12s;
-    }
-    .btn.ghost{
-      background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--accent2);padding:8px 12px;
-      box-shadow:none;
-    }
-    .btn:active{transform:translateY(1px)}
-    .phone{display:flex;align-items:center;gap:10px;background:var(--glass);padding:8px 12px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
-
-    /* Hero */
-    .hero{
-      max-width:1180px;margin:28px auto;padding:28px 20px;display:grid;grid-template-columns:1fr 420px;gap:22px;
-    }
-    .hero-card{
-      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      padding:28px;border-radius:18px;box-shadow:var(--shadow-lg);border:1px solid rgba(255,255,255,0.03);
-      overflow:hidden;
-    }
-    .hero-title{
-      font-family:Montserrat, Inter, sans-serif;font-size:28px;margin:0 0 8px 0;
-      letter-spacing:-0.6px;color:linear-gradient(90deg,#fff,#e6f0ff);
-    }
-    .hero-lead{color:var(--muted);margin:0 0 18px 0}
-    .badges{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}
-    .badge{background:linear-gradient(90deg, rgba(124,58,237,0.12), rgba(6,182,212,0.08));color:#dbeafe;padding:8px 12px;border-radius:999px;font-weight:600;font-size:13px}
-
-    .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
-    .cta-ghost{background:transparent;border:1px solid rgba(255,255,255,0.04);padding:10px 12px;border-radius:12px;color:var(--muted)}
-    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
-    .feature{
-      background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.01));
-      border-radius:12px;padding:14px;border:1px solid rgba(255,255,255,0.02);display:flex;gap:10px;align-items:center;
-    }
-    .feature svg{width:40px;height:40px;flex-shrink:0}
-
-    /* Right panel */
-    .panel{
-      position:relative;padding:18px;border-radius:18px;background:linear-gradient(180deg, rgba(255,255,255,0.015), transparent);
-      border:1px solid rgba(255,255,255,0.02);
-      height:100%;
-      display:flex;flex-direction:column;gap:12px;
-    }
-    .map{
-      flex:1;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.03);
-      background:
-        linear-gradient(180deg, rgba(124,58,237,0.04), rgba(6,182,212,0.02));
-      display:grid;place-items:center;color:var(--muted);font-weight:600;
-    }
-    .panel .meta{display:flex;flex-direction:column;gap:8px}
-    .meta-row{display:flex;align-items:center;justify-content:space-between;gap:12px}
-    .meta-left{display:flex;gap:10px;align-items:center}
-    .meta-left p{margin:0}
-    .pill{background:rgba(255,255,255,0.03);padding:8px 10px;border-radius:999px;border:1px solid rgba(255,255,255,0.02);font-weight:700}
-
-    /* Services */
-    .section{max-width:1180px;margin:24px auto;padding:0 20px}
-    .section-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .card{
-      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      padding:18px;border-radius:16px;border:1px solid rgba(255,255,255,0.02);
-      box-shadow:0 10px 30px rgba(2,6,23,0.45);transition:transform .18s ease, box-shadow .18s ease;
-    }
-    .card:hover{transform:translateY(-8px);box-shadow:0 22px 60px rgba(2,6,23,0.55)}
-    .product{
-      display:flex;gap:14px;align-items:center;
-    }
-    .product-visual{
-      width:96px;height:96px;border-radius:12px;background:linear-gradient(135deg,#11182720,#00000010);
-      display:grid;place-items:center;font-weight:800;font-family:Montserrat;
-      letter-spacing:1px;color:white;border:1px solid rgba(255,255,255,0.03);
-      transition:transform .28s cubic-bezier(.2,.9,.25,1);
-    }
-    .product:hover .product-visual{transform:translateY(-6px) rotate(-1deg) scale(1.02)}
-
-    /* Testimonials */
-    .testimonials{margin-top:18px;display:flex;flex-direction:column;gap:12px}
-    .quote{background:linear-gradient(180deg, rgba(255,255,255,0.015), transparent);padding:16px;border-radius:12px;border:1px solid rgba(255,255,255,0.02);display:flex;gap:12px;align-items:flex-start}
-    .quote p{margin:0;color:var(--muted)}
-    .stars{color:goldenrod;font-weight:700}
-
-    /* Footer */
-    footer{max-width:1180px;margin:28px auto;padding:20px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);border:1px solid rgba(255,255,255,0.02);display:flex;justify-content:space-between;align-items:center;gap:12px}
-    footer p{margin:0;color:var(--muted)}
-
-    /* Modal */
-    .modal-backdrop{
-      position:fixed;inset:0;background:linear-gradient(180deg, rgba(2,6,23,0.7), rgba(2,6,23,0.85));
-      display:none;align-items:center;justify-content:center;z-index:9998;padding:20px;
-    }
-    .modal{
-      max-width:720px;width:100%;background:linear-gradient(180deg,#071029,#071427);border-radius:14px;padding:18px;border:1px solid rgba(255,255,255,0.03);
-      box-shadow:0 18px 60px rgba(2,6,23,0.8);
-    }
-    .close{background:transparent;border:0;color:var(--muted);font-weight:700;cursor:pointer}
-
-    /* Forms */
-    label{display:block;font-size:13px;color:var(--muted);margin-bottom:6px}
-    input[type="text"], input[type="tel"], input[type="email"], textarea, select{
-      width:100%;padding:10px 12px;border-radius:10px;background:transparent;border:1px solid rgba(255,255,255,0.04);
-      color: #e8f0ff;outline:none;font-size:14px;
-    }
-    textarea{min-height:110px;resize:vertical}
-    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    .form-actions{display:flex;gap:10px;justify-content:flex-end;margin-top:12px}
-
-    /* Toast */
-    .toast{
-      position:fixed;right:20px;bottom:20px;background:linear-gradient(90deg,var(--accent1),var(--accent2));color:white;padding:12px 16px;border-radius:12px;box-shadow:var(--shadow-sm);display:none;z-index:9999;
-    }
-
-    /* Responsive */
-    @media (max-width:980px){
-      .hero{grid-template-columns:1fr; padding-bottom:12px}
-      .section-grid{grid-template-columns:repeat(2,1fr)}
-      .form-row{grid-template-columns:1fr}
-      .nav{padding:8px 16px}
-    }
-    @media (max-width:640px){
-      .brand h1{font-size:14px}
-      .hero{padding:18px 14px}
-      .section-grid{grid-template-columns:1fr}
-      .hero-card{padding:18px}
-      .panel{padding:12px}
-      .logo{width:44px;height:44px}
-      .product-visual{width:78px;height:78px}
-      .badges{gap:8px}
-      footer{flex-direction:column;align-items:flex-start;gap:10px}
-    }
-
-    /* subtle animations */
-    @keyframes floaty {
-      0%{transform:translateY(0)}
-      50%{transform:translateY(-6px)}
-      100%{transform:translateY(0)}
-    }
-    .floaty{animation:floaty 6s ease-in-out infinite}
-
-    /* focus styles */
-    button:focus,input:focus,select:focus,textarea:focus{box-shadow:0 6px 20px rgba(124,58,237,0.18);border:1px solid rgba(124,58,237,0.28)}
-    .accessible-contrast{filter:contrast(1.08) saturate(1.1)}
-  </style>
-</head>
-<body>
-
-  <a class="skip-link" href="#main">Skip to content</a>
-
-  <header role="banner" aria-label="Main header">
-    <nav class="nav" role="navigation" aria-label="Primary navigation">
-      <div class="brand">
-        <div class="logo" aria-hidden="true">MM</div>
-        <div>
-          <h1>MASTERMIND ALLIANCE</h1>
-          <p>Publishing Group · Houston, TX</p>
-        </div>
-      </div>
-
-      <div class="nav-actions">
-        <div class="phone" aria-hidden="true">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="opacity:0.95"><path d="M21 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 3.08 5.18 2 2 0 0 1 5 3h3a2 2 0 0 1 2 1.72c.12 1.05.33 2.09.61 3.09a2 2 0 0 1-.45 1.95l-1.27 1.27a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 1.95-.45c1 .28 2.04.49 3.09.61A2 2 0 0 1 21 16.92z" stroke="white" stroke-opacity="0.88" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-          <div style="display:flex;flex-direction:column;line-height:1">
-            <a href="tel:+18324831696" style="color:white;font-weight:700;font-size:14px">+1 (832) 483-1696</a>
-            <span style="font-size:12px;color:var(--muted)">Available 24/7</span>
-          </div>
-        </div>
-
-        <button class="btn" id="bookBtn" aria-haspopup="dialog">Book Appointment</button>
-        <a class="btn ghost" id="orderBtn">Order Apparel</a>
-      </div>
-    </nav>
-  </header>
-
-  <main id="main" tabindex="-1">
-    <section class="hero" aria-labelledby="heroHeading" role="region">
-      <div class="hero-card" aria-hidden="false">
-        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
-          <div>
-            <h2 id="heroHeading" class="hero-title">Mastermind Alliance Publishing Group</h2>
-            <p class="hero-lead">Brand development, custom-branded merchandise, and premium apparel — locally produced in Houston, TX. Flexible appointments & accessible entrance.</p>
-            <div class="badges" aria-hidden="true">
-              <div class="badge">24/7 Service</div>
-              <div class="badge">Accessible Entrance</div>
-              <div class="badge">Custom Snapbacks & Hoodies</div>
-            </div>
-          </div>
-          <div style="min-width:120px;text-align:right">
-            <div style="font-size:12px;color:var(--muted)">Location</div>
-            <div style="font-weight:800">12170 Almeda Rd, Houston, TX 77045</div>
-            <div style="margin-top:8px">
-              <a href="https://www.google.com/maps/search/?api=1&query=12170+Almeda+Rd+Houston+TX+77045" target="_blank" class="cta-ghost" style="font-weight:700">Get Directions →</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="features" aria-hidden="true">
-          <div class="feature">
-            <svg viewBox="0 0 24 24" fill="none"><path d="M12 2v20" stroke="white" stroke-opacity="0.9" stroke-width="1.2" stroke-linecap="round"/><path d="M5 8h14" stroke="white" stroke-opacity="0.9" stroke-width="1.2" stroke-linecap="round"/></svg>
-            <div>
-              <div style="font-weight:700">Brand Development</div>
-              <div style="font-size:13px;color:var(--muted)">Logo systems, visual identity, and brand strategy.</div>
-            </div>
-          </div>
-
-          <div class="feature">
-            <svg viewBox="0 0 24 24" fill="none"><path d="M3 7h18M7 7v14a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V7" stroke="white" stroke-opacity="0.9" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <div>
-              <div style="font-weight:700">Custom Apparel</div>
-              <div style="font-size:13px;color:var(--muted)">Snapback hats, hoodies, embroidered & printed collections.</div>
-            </div>
-          </div>
-
-          <div class="feature">
-            <svg viewBox="0 0 24 24" fill="none"><path d="M12 20v-6" stroke="white" stroke-opacity="0.9" stroke-width="1.2" stroke-linecap="round"/><path d="M6 10h12" stroke="white" stroke-opacity="0.9" stroke-width="1.2" stroke-linecap="round"/></svg>
-            <div>
-              <div style="font-weight:700">Flexible Hours</div>
-              <div style="font-size:13px;color:var(--muted)">Open 24/7 with appointment options to suit your schedule.</div>
-            </div>
-          </div>
-        </div>
-
-        <div style="display:flex;align-items:center;justify-content:space-between;margin-top:18px;gap:12px;flex-wrap:wrap">
-          <div style="display:flex;gap:10px;align-items:center">
-            <button class="btn" id="viewCollection">View Collection</button>
-            <button class="cta-ghost" id="watchVideo" style="padding:10px 12px">YouTube Channel</button>
-          </div>
-
-          <div style="color:var(--muted);font-weight:600">
-            <span class="pill">By Appointment • Accessible Entrance</span>
-          </div>
-        </div>
-
-        <div class="testimonials" aria-live="polite" style="margin-top:18px">
-          <div style="display:flex;align-items:center;justify-content:space-between">
-            <strong style="font-size:13px">Recent Reviews</strong>
-            <div style="font-size:13px;color:var(--muted)">4.8 / 5 (based on recent reviews)</div>
-          </div>
-
-          <div id="testimonialTrack" style="display:flex;gap:12px;overflow:hidden;padding-top:8px">
-            <div class="quote" style="min-width:320px;max-width:420px">
-              <div style="width:48px;height:48px;border-radius:10px;background:linear-gradient(90deg,var(--accent1),var(--accent2));display:grid;place-items:center;font-weight:800">KT</div>
-              <div>
-                <div style="font-weight:700">King Titanium — Hoodie Drop</div>
-                <div class="stars">★★★★★</div>
-                <p>Top-tier quality and super responsive service. The logos came out crisp and the fit is excellent.</p>
-              </div>
-            </div>
-
-            <div class="quote" style="min-width:320px;max-width:420px">
-              <div style="width:48px;height:48px;border-radius:10px;background:linear-gradient(90deg,#ff7ab6,#ffb86b);display:grid;place-items:center;font-weight:800">MM</div>
-              <div>
-                <div style="font-weight:700">MMAPGX Snapbacks</div>
-                <div class="stars">★★★★★</div>
-                <p>Fast turnaround and they accommodated our custom embroidery request with ease. Highly recommend.</p>
-              </div>
-            </div>
-
-            <div class="quote" style="min-width:320px;max-width:420px">
-              <div style="width:48px;height:48px;border-radius:10px;background:linear-gradient(90deg,#6ee7b7,#34d399);display:grid;place-items:center;font-weight:800">JS</div>
-              <div>
-                <div style="font-weight:700">Excellent Accessibility</div>
-                <div class="stars">★★★★☆</div>
-                <p>Accessible entrance and appointment scheduling was simple — the team was professional and friendly.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <aside class="panel" aria-label="Contact & Location panel">
-        <div style="display:flex;align-items:center;gap:12px">
-          <div style="width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,var(--accent1),var(--accent2));display:grid;place-items:center;font-weight:900;font-family:Montserrat">MM</div>
-          <div>
-            <div style="font-weight:800">MASTERMIND ALLIANCE PUBLISHING GROUP</div>
-            <div style="font-size:13px;color:var(--muted)">Multi-service business center — Accessible entrance & by appointment</div>
-          </div>
-        </div>
-
-        <div style="border-top:1px dashed rgba(255,255,255,0.02);padding-top:12px">
-          <div class="meta">
-            <div class="meta-row">
-              <div class="meta-left">
-                <div style="width:42px;height:42;border-radius:10px;background:rgba(255,255,255,0.02);display:grid;place-items:center">📍</div>
-                <div>
-                  <div style="font-weight:700">12170 Almeda Rd</div>
-                  <div style="font-size:13px;color:var(--muted)">Houston, TX 77045</div>
-                </div>
-              </div>
-              <a class="pill" href="https://maps.google.com/?q=12170+Almeda+Rd+Houston+TX+77045" target="_blank">Open map</a>
-            </div>
-
-            <div class="meta-row" style="margin-top:8px">
-              <div class="meta-left">
-                <div style="width:42px;height:42;border-radius:10px;background:rgba(255,255,255,0.02);display:grid;place-items:center">⏱️</div>
-                <div>
-                  <div style="font-weight:700">Operational Hours</div>
-                  <div style="font-size:13px;color:var(--muted)">Open 24 hours • By appointment</div>
-                </div>
-              </div>
-              <div style="display:flex;flex-direction:column;align-items:flex-end">
-                <span class="pill" style="background:linear-gradient(90deg,#0ea5a4,#06b6d4);color:white">24 / 7</span>
-                <small style="font-size:12px;color:var(--muted);margin-top:8px">Appointments encouraged</small>
-              </div>
-            </div>
-
-            <div class="meta-row" style="margin-top:8px">
-              <div class="meta-left">
-                <div style="width:42px;height:42;border-radius:10px;background:rgba(255,255,255,0.02);display:grid;place-items:center">📞</div>
-                <div>
-                  <div style="font-weight:700"><a href="tel:+18324831696" style="color:inherit">+1 (832) 483-1696</a></div>
-                  <div style="font-size:13px;color:var(--muted)">Prefer text? Use the same number</div>
-                </div>
-              </div>
-              <div>
-                <button class="btn ghost" id="callBtn" onclick="window.location.href='tel:+18324831696'">Call Now</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div style="border-top:1px dashed rgba(255,255,255,0.02);padding-top:12px;display:flex;gap:12px;align-items:center">
-          <div style="flex:1">
-            <div style="font-weight:700">Featured Collection</div>
-            <div style="font-size:13px;color:var(--muted)">Limited drop — "King Titanium" hoodies & MMAPGX snapbacks.</div>
-          </div>
-          <div style="display:flex;flex-direction:column;gap:8px;align-items:center">
-            <div class="product-visual floaty" aria-hidden="true" style="width:88px;height:88px;border-radius:12px;font-family:Montserrat">KT</div>
-            <button class="btn" id="orderNow">Order</button>
-          </div>
-        </div>
-
-        <div style="margin-top:auto;border-top:1px dashed rgba(255,255,255,0.02);padding-top:12px;display:flex;gap:8px;align-items:center;justify-content:space-between">
-          <div style="display:flex;gap:8px;align-items:center">
-            <div style="width:40px;height:40;border-radius:10px;background:rgba(255,255,255,0.02);display:grid;place-items:center">▶️</div>
-            <div>
-              <div style="font-weight:700">YouTube Channel</div>
-              <div style="font-size:13px;color:var(--muted)">Showcasing recent product drops & behind-the-scenes.</div>
-            </div>
-          </div>
-          <div style="display:flex;gap:8px">
-            <button id="watchBtn" class="btn ghost">Watch</button>
-          </div>
-        </div>
-      </aside>
-    </section>
-
-    <section class="section" aria-labelledby="servicesHeading">
-      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px">
-        <h3 id="servicesHeading" style="margin:0;font-size:18px">Services & Products</h3>
-        <div style="color:var(--muted);font-size:13px">High-quality printing, embroidery & full production</div>
-      </div>
-
-      <div class="section-grid" role="list">
-        <article class="card" role="listitem" aria-label="Custom Apparel">
-          <div class="product">
-            <div class="product-visual" aria-hidden="true" style="background:linear-gradient(135deg,#111827,#0f1724);">MMAP</div>
-            <div>
-              <h4 style="margin:0">Custom Hoodies — "King Titanium"</h4>
-              <div style="font-size:13px;color:var(--muted);margin-top:6px">Premium fleece, direct-to-garment prints or embroidered crests. Bulk & single orders available.</div>
-              <div style="display:flex;gap:8px;margin-top:12px">
-                <button class="btn" data-product="King Titanium Hoodie">Customize</button>
-                <button class="cta-ghost" data-preview="hoodie">Preview</button>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <article class="card" role="listitem" aria-label="Snapback Hats">
-          <div class="product">
-            <div class="product-visual" aria-hidden="true" style="background:linear-gradient(135deg,#6d28d9,#0891b2);">MMX</div>
-            <div>
-              <h4 style="margin:0">Snapback Hats — MMAPGX</h4>
-              <div style="font-size:13px;color:var(--muted);margin-top:6px">Structured & flat-brim options, embroidered logos with premium threads.</div>
-              <div style="display:flex;gap:8px;margin-top:12px">
-                <button class="btn" data-product="MMAPGX Snapback">Customize</button>
-                <button class="cta-ghost" data-preview="snapback">Preview</button>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <article class="card" role="listitem" aria-label="Brand Development">
-          <div style="display:flex;gap:14px;align-items:center">
-            <div style="width:96px;height:96px;border-radius:12px;background:linear-gradient(135deg,#ef4444,#f97316);display:grid;place-items:center;font-weight:900">ID</div>
-            <div>
-              <h4 style="margin:0">Brand Development</h4>
-              <div style="font-size:13px;color:var(--muted);margin-top:6px">Logo design, visual identity systems, and packaging design to help your brand stand out.</div>
-              <div style="display:flex;gap:8px;margin-top:12px">
-                <button class="btn" id="brandIntro">Start Project</button>
-                <button class="cta-ghost" id="downloadKit">Brand Kit</button>
-              </div>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section" aria-labelledby="galleryHeading" style="margin-top:18px">
-      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px">
-        <h3 id="galleryHeading" style="margin:0;font-size:18px">Product Gallery</h3>
-        <div style="color:var(--muted);font-size:13px">Swipe to preview items</div>
-      </div>
-
-      <div style="overflow:hidden;border-radius:16px;border:1px solid rgba(255,255,255,0.02);padding:16px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent)">
-        <div id="carousel" style="display:flex;gap:14px;transition:transform .6s cubic-bezier(.2,.9,.25,1);will-change:transform">
-          <!-- slide 1 -->
-          <div style="min-width:320px;border-radius:12px;padding:12px;background:linear-gradient(180deg,#071427,#071a35);border:1px solid rgba(255,255,255,0.02)">
-            <div style="display:flex;gap:12px">
-              <div style="width:140px;height:140px;border-radius:12px;background:linear-gradient(135deg,#6d28d9,#0891b2);display:grid;place-items:center;font-weight:900;font-family:Montserrat">MMAPGX</div>
-              <div style="flex:1">
-                <div style="font-weight:800">MMAPGX Snapback</div>
-                <div style="font-size:13px;color:var(--muted);margin-top:8px">Embroidered logo, structured fit, available in black, navy, and grey.</div>
-                <div style="display:flex;gap:8px;margin-top:14px">
-                  <button class="btn" data-product="MMAPGX Snapback">Order</button>
-                  <button class="cta-ghost" data-preview="snapback">View</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- slide 2 -->
-          <div style="min-width:320px;border-radius:12px;padding:12px;background:linear-gradient(180deg,#071427,#071a35);border:1px solid rgba(255,255,255,0.02)">
-            <div style="display:flex;gap:12px">
-              <div style="width:140px;height:140px;border-radius:12px;background:linear-gradient(135deg,#ff7ab6,#ffb86b);display:grid;place-items:center;font-weight:900;font-family:Montserrat">KT</div>
-              <div style="flex:1">
-                <div style="font-weight:800">King Titanium Hoodie</div>
-                <div style="font-size:13px;color:var(--muted);margin-top:8px">Soft fleece, high-quality print. Sizes S–3XL. Custom tags available.</div>
-                <div style="display:flex;gap:8px;margin-top:14px">
-                  <button class="btn" data-product="King Titanium Hoodie">Order</button>
-                  <button class="cta-ghost" data-preview="hoodie">View</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- slide 3 -->
-          <div style="min-width:320px;border-radius:12px;padding:12px;background:linear-gradient(180deg,#071427,#071a35);border:1px solid rgba(255,255,255,0.02)">
-            <div style="display:flex;gap:12px">
-              <div style="width:140px;height:140px;border-radius:12px;background:linear-gradient(135deg,#6ee7b7,#34d399);display:grid;place-items:center;font-weight:900;font-family:Montserrat">Custom</div>
-              <div style="flex:1">
-                <div style="font-weight:800">Custom Drops</div>
-                <div style="font-size:13px;color:var(--muted);margin-top:8px">Brand campaigns, event merchandise, and limited drop management.</div>
-                <div style="display:flex;gap:8px;margin-top:14px">
-                  <button class="btn" id="contactForDrop">Inquire</button>
-                  <button class="cta-ghost" data-preview="custom">Details</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        <div style="display:flex;justify-content:center;gap:12px;margin-top:12px">
-          <button class="cta-ghost" id="prevSlide" aria-label="Previous slide">◀</button>
-          <button class="cta-ghost" id="nextSlide" aria-label="Next slide">▶</button>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer role="contentinfo">
-    <div>
-      <p style="font-weight:800">MASTERMIND ALLIANCE PUBLISHING GROUP</p>
-      <p style="font-size:13px;color:var(--muted);margin-top:6px">12170 Almeda Rd, Houston, TX 77045 • <a href="tel:+18324831696">+1 (832) 483-1696</a></p>
-    </div>
-    <div style="display:flex;gap:10px;align-items:center">
-      <a class="cta-ghost" href="https://www.youtube.com/" target="_blank">YouTube Channel</a>
-      <a class="cta-ghost" href="https://maps.google.com/?q=12170+Almeda+Rd+Houston+TX+77045" target="_blank">Directions</a>
-    </div>
-  </footer>
-
-  <!-- Modal for booking & ordering -->
-  <div class="modal-backdrop" id="modalBackdrop" role="dialog" aria-modal="true" aria-hidden="true">
-    <div class="modal" role="document">
-      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
-        <div>
-          <h3 id="modalTitle" style="margin:0">Book an Appointment</h3>
-          <div style="font-size:13px;color:var(--muted);margin-top:6px">We will follow up via phone or text to confirm your time slot.</div>
-        </div>
-        <button class="close" id="closeModal" aria-label="Close dialog">✕</button>
-      </div>
-
-      <form id="bookingForm" style="margin-top:12px">
-        <div class="form-row">
-          <div>
-            <label for="name">Full name</label>
-            <input type="text" id="name" name="name" placeholder="Jane Doe" required>
-          </div>
-          <div>
-            <label for="phone">Phone</label>
-            <input type="tel" id="phone" name="phone" placeholder="+1 (___) ___-____" required>
-          </div>
-        </div>
-
-        <div style="margin-top:10px">
-          <label for="service">Service</label>
-          <select id="service" name="service">
-            <option>Brand consultation</option>
-            <option>Apparel order / custom piece</option>
-            <option>Bulk production inquiry</option>
-            <option>Studio visit / tour</option>
-          </select>
-        </div>
-
-        <div style="margin-top:10px">
-          <label for="notes">Notes (optional)</label>
-          <textarea id="notes" name="notes" placeholder="Tell us about your project or preferred time..."></textarea>
-        </div>
-
-        <div class="form-actions">
-          <button type="button" class="cta-ghost" id="modalCancel">Cancel</button>
-          <button type="submit" class="btn">Request Appointment</button>
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <!-- Lightbox for YouTube -->
-  <div class="modal-backdrop" id="videoBackdrop" role="dialog" aria-hidden="true" style="display:none;">
-    <div class="modal" style="max-width:920px;">
-      <div style="display:flex;align-items:center;justify-content:space-between">
-        <h3 style="margin:0">Recent Drop — YouTube Preview</h3>
-        <button class="close" id="closeVideo">✕</button>
-      </div>
-      <div style="margin-top:12px">
-        <div style="position:relative;padding-top:56.25%;border-radius:10px;overflow:hidden;background:black">
-          <iframe id="ytPlayer" style="position:absolute;inset:0;border:0" src="https://www.youtube.com/embed/?listType=search&list=MMAPGX" title="MMAPG YouTube" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="toast" id="toast">Request sent — We'll be in touch shortly.</div>
-
-  <script>
-    // Basic interactivity and accessible focus management
-    (function(){
-      const modalBackdrop = document.getElementById('modalBackdrop');
-      const videoBackdrop = document.getElementById('videoBackdrop');
-      const bookBtn = document.getElementById('bookBtn');
-      const orderBtn = document.getElementById('orderBtn');
-      const orderNow = document.getElementById('orderNow');
-      const watchBtn = document.getElementById('watchBtn');
-      const watchVideo = document.getElementById('watchVideo');
-      const closeModal = document.getElementById('closeModal');
-      const closeVideo = document.getElementById('closeVideo');
-      const modalCancel = document.getElementById('modalCancel');
-      const bookingForm = document.getElementById('bookingForm');
-      const toast = document.getElementById('toast');
-      const modalTitle = document.getElementById('modalTitle');
-
-      // open booking modal
-      function openBooking(title){
-        modalTitle.textContent = title || 'Book an Appointment';
-        modalBackdrop.style.display = 'flex';
-        modalBackdrop.setAttribute('aria-hidden','false');
-        document.body.style.overflow = 'hidden';
-        // focus first element
-        setTimeout(()=>document.getElementById('name').focus(),80);
-      }
-      function closeBooking(){
-        modalBackdrop.style.display = 'none';
-        modalBackdrop.setAttribute('aria-hidden','true');
-        document.body.style.overflow = '';
-      }
-
-      bookBtn.addEventListener('click', ()=> openBooking('Book an Appointment'));
-      document.getElementById('brandIntro').addEventListener('click', ()=> openBooking('Start a Brand Project'));
-      document.querySelectorAll('.btn[data-product]').forEach(b=>{
-        b.addEventListener('click', (e)=>{
-          const p = e.currentTarget.getAttribute('data-product') || 'Custom Order';
-          openBooking('Order — ' + p);
-        })
-      });
-
-      orderBtn.addEventListener('click', ()=> openBooking('Order Apparel'));
-      orderNow.addEventListener('click', ()=> openBooking('Order Apparel'));
-
-      closeModal.addEventListener('click', closeBooking);
-      modalCancel.addEventListener('click', closeBooking);
-
-      bookingForm.addEventListener('submit', (e)=>{
-        e.preventDefault();
-        // simulate network
-        closeBooking();
-        toast.style.display = 'block';
-        setTimeout(()=> toast.style.display='none', 4200);
-      });
-
-      // video lightbox
-      function openVideo(){
-        videoBackdrop.style.display = 'flex';
-        videoBackdrop.setAttribute('aria-hidden','false');
-        document.body.style.overflow='hidden';
-      }
-      function closeVideoBox(){
-        videoBackdrop.style.display = 'none';
-        videoBackdrop.setAttribute('aria-hidden','true');
-        document.body.style.overflow='';
-        const iframe = document.getElementById('ytPlayer');
-        // stop video by resetting src
-        iframe.src = iframe.src;
-      }
-
-      watchBtn.addEventListener('click', openVideo);
-      watchVideo.addEventListener('click', openVideo);
-      closeVideo.addEventListener('click', closeVideoBox);
-
-      // click outside to close modal (backdrop)
-      [modalBackdrop, videoBackdrop].forEach(back => {
-        back.addEventListener('click', (e)=>{
-          if(e.target === back) {
-            Array.from(back.children).forEach(child => {
-              if(child.querySelector('form')) closeBooking();
-              if(child.querySelector('#ytPlayer')) closeVideoBox();
-            })
-          }
-        });
-      });
-
-      // Carousel logic
-      const carousel = document.getElementById('carousel');
-      const prev = document.getElementById('prevSlide');
-      const next = document.getElementById('nextSlide');
-      let index = 0;
-      const slides = carousel.children;
-      const total = slides.length;
-
-      function updateCarousel(){
-        const width = slides[0].getBoundingClientRect().width + 14; // gap
-        carousel.style.transform = 'translateX(' + (-width * index) + 'px)';
-      }
-      next.addEventListener('click', ()=> { index = (index + 1) % total; updateCarousel(); });
-      prev.addEventListener('click', ()=> { index = (index - 1 + total) % total; updateCarousel(); });
-
-      // autoplay carousel
-      let autoplay = setInterval(()=>{ index = (index + 1) % total; updateCarousel(); }, 4200);
-      [next, prev].forEach(btn => btn.addEventListener('click', ()=> { clearInterval(autoplay); autoplay = setInterval(()=>{ index = (index + 1) % total; updateCarousel(); }, 4200); }));
-
-      // testimonial auto-scroll
-      const track = document.getElementById('testimonialTrack');
-      let tIndex = 0;
-      function autoTestimonial(){
-        const w = track.children[0].getBoundingClientRect().width + 12;
-        tIndex = (tIndex + 1) % track.children.length;
-        track.style.transform = 'translateX(' + (-w * tIndex) + 'px)';
-      }
-      setInterval(autoTestimonial, 5200);
-
-      // keyboard accessibility: Esc to close modals
-      window.addEventListener('keydown', (e)=>{
-        if(e.key === 'Escape'){
-          if(modalBackdrop.style.display === 'flex') closeBooking();
-          if(videoBackdrop.style.display === 'flex') closeVideoBox();
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mastermind Alliance Publishing Group - Premium streetwear, brand development, and exclusive merchandise. Houston, TX.">
+    <meta name="keywords" content="MMAPG, MMAPGX, premium streetwear, custom apparel, brand development, Houston">
+    <title>MMAPG | Mastermind Alliance Publishing Group</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'dark': '#0a0a0a',
+                        'charcoal': '#1a1a1a',
+                        'gunmetal': '#2a2a2a',
+                        'silver': '#c0c0c0',
+                        'platinum': '#e5e4e2',
+                        'titanium': '#878681',
+                        'gold-dim': '#b8860b',
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                        'display': ['Playfair Display', 'serif'],
+                    }
+                }
+            }
         }
-      });
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-      // preview buttons - simple microinteraction
-      document.querySelectorAll('[data-preview]').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-          const what = e.currentTarget.getAttribute('data-preview');
-          // show toast with preview
-          toast.textContent = 'Preview: ' + what + ' (interactive preview disabled in demo)';
-          toast.style.display = 'block';
-          setTimeout(()=> { toast.style.display='none'; toast.textContent = 'Request sent — We\\'ll be in touch shortly.' }, 2600);
+        html {
+            scroll-behavior: smooth;
+            scrollbar-width: thin;
+            scrollbar-color: #2a2a2a #0a0a0a;
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #2a2a2a;
+            border-radius: 3px;
+        }
+
+        body {
+            background-color: #0a0a0a;
+            color: #e5e4e2;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Custom Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-60px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(60px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% {
+                box-shadow: 0 0 20px rgba(192, 192, 192, 0.1);
+            }
+            50% {
+                box-shadow: 0 0 40px rgba(192, 192, 192, 0.2);
+            }
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes grain {
+            0%, 100% { transform: translate(0, 0); }
+            10% { transform: translate(-5%, -10%); }
+            20% { transform: translate(-15%, 5%); }
+            30% { transform: translate(7%, -25%); }
+            40% { transform: translate(-5%, 25%); }
+            50% { transform: translate(-15%, 10%); }
+            60% { transform: translate(15%, 0%); }
+            70% { transform: translate(0%, 15%); }
+            80% { transform: translate(3%, 35%); }
+            90% { transform: translate(-10%, 10%); }
+        }
+
+        .animate-fadeInUp {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .animate-fadeIn {
+            animation: fadeIn 1s ease forwards;
+        }
+
+        .animate-slideInLeft {
+            animation: slideInLeft 0.8s ease forwards;
+        }
+
+        .animate-slideInRight {
+            animation: slideInRight 0.8s ease forwards;
+        }
+
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+        .delay-500 { animation-delay: 0.5s; }
+        .delay-600 { animation-delay: 0.6s; }
+        .delay-700 { animation-delay: 0.7s; }
+        .delay-800 { animation-delay: 0.8s; }
+
+        /* Reveal on scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-60px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .reveal-left.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(60px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .reveal-right.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Film grain overlay */
+        .grain-overlay::before {
+            content: '';
+            position: fixed;
+            top: -50%;
+            left: -50%;
+            right: -50%;
+            bottom: -50%;
+            width: 200%;
+            height: 200%;
+            background: transparent url('data:image/svg+xml,<svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noise)" opacity="0.02"/></svg>') repeat;
+            animation: grain 8s steps(10) infinite;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.4;
+        }
+
+        /* Premium button styles */
+        .btn-premium {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .btn-premium::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .btn-premium:hover::before {
+            left: 100%;
+        }
+
+        .btn-premium:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(192, 192, 192, 0.15);
+        }
+
+        /* Product card hover */
+        .product-card {
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .product-card:hover .product-image {
+            transform: scale(1.05);
+        }
+
+        .product-card:hover .product-overlay {
+            opacity: 1;
+        }
+
+        .product-image {
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .product-overlay {
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        /* Metallic text effect */
+        .metallic-text {
+            background: linear-gradient(135deg, #e5e4e2 0%, #c0c0c0 25%, #e5e4e2 50%, #878681 75%, #e5e4e2 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shimmer 4s linear infinite;
+        }
+
+        /* Divider line */
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #2a2a2a, #4a4a4a, #2a2a2a, transparent);
+        }
+
+        /* Nav glass effect */
+        .nav-glass {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            background: rgba(10, 10, 10, 0.85);
+            border-bottom: 1px solid rgba(42, 42, 42, 0.5);
+        }
+
+        /* Hero gradient */
+        .hero-gradient {
+            background: radial-gradient(ellipse at 50% 0%, rgba(42, 42, 42, 0.4) 0%, transparent 60%),
+                        radial-gradient(ellipse at 80% 50%, rgba(30, 30, 30, 0.3) 0%, transparent 40%),
+                        linear-gradient(180deg, #0a0a0a 0%, #0a0a0a 100%);
+        }
+
+        /* Service card */
+        .service-card {
+            background: linear-gradient(145deg, #1a1a1a 0%, #111111 100%);
+            border: 1px solid #2a2a2a;
+            transition: all 0.4s ease;
+        }
+
+        .service-card:hover {
+            border-color: #4a4a4a;
+            background: linear-gradient(145deg, #1f1f1f 0%, #151515 100%);
+            transform: translateY(-4px);
+        }
+
+        /* Testimonial card */
+        .testimonial-card {
+            background: linear-gradient(145deg, rgba(26, 26, 26, 0.8) 0%, rgba(15, 15, 15, 0.8) 100%);
+            border: 1px solid rgba(42, 42, 42, 0.5);
+        }
+
+        /* Magnetic cursor effect area */
+        .magnetic {
+            transition: transform 0.3s ease;
+        }
+
+        /* Marquee */
+        .marquee-track {
+            display: flex;
+            animation: marquee 30s linear infinite;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* Mobile menu */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+
+        /* Image placeholder styling */
+        .img-placeholder {
+            background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .img-placeholder::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, transparent 40%, rgba(192, 192, 192, 0.03) 50%, transparent 60%);
+            background-size: 200% 200%;
+            animation: shimmer 3s linear infinite;
+        }
+
+        /* Number counter */
+        .counter {
+            font-variant-numeric: tabular-nums;
+        }
+
+        /* Custom cursor for desktop */
+        @media (min-width: 1024px) {
+            .custom-cursor {
+                width: 20px;
+                height: 20px;
+                border: 1px solid rgba(192, 192, 192, 0.5);
+                border-radius: 50%;
+                position: fixed;
+                pointer-events: none;
+                z-index: 99999;
+                transition: transform 0.15s ease, opacity 0.15s ease;
+                mix-blend-mode: difference;
+            }
+
+            .custom-cursor.hover {
+                transform: scale(2.5);
+                border-color: rgba(255, 255, 255, 0.8);
+            }
+        }
+
+        /* Loading screen */
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #0a0a0a;
+            z-index: 99999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            transition: opacity 0.6s ease, visibility 0.6s ease;
+        }
+
+        .loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader-bar {
+            width: 200px;
+            height: 2px;
+            background: #1a1a1a;
+            border-radius: 2px;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+
+        .loader-progress {
+            height: 100%;
+            background: linear-gradient(90deg, #c0c0c0, #e5e4e2);
+            border-radius: 2px;
+            animation: loading 1.5s ease-in-out forwards;
+        }
+
+        @keyframes loading {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+
+        /* Section label */
+        .section-label {
+            font-size: 0.65rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: #878681;
+        }
+    </style>
+</head>
+<body class="grain-overlay">
+    <!-- Loading Screen -->
+    <div class="loader" id="loader">
+        <div class="text-lg font-inter tracking-[0.3em] text-platinum font-light">MMAPG</div>
+        <div class="loader-bar">
+            <div class="loader-progress"></div>
+        </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="cursor"></div>
+
+    <!-- Navigation -->
+    <nav class="nav-glass fixed top-0 left-0 w-full z-[1000] px-6 lg:px-12 py-4">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-3 magnetic">
+                <div class="w-8 h-8 border border-silver/30 flex items-center justify-center">
+                    <span class="text-platinum font-inter font-bold text-xs">M</span>
+                </div>
+                <span class="text-platinum font-inter font-semibold tracking-[0.15em] text-sm hidden sm:block">MMAPG</span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <div class="hidden lg:flex items-center gap-10">
+                <a href="#collections" class="text-sm text-titanium hover:text-platinum transition-colors duration-300 tracking-wide">Collections</a>
+                <a href="#services" class="text-sm text-titanium hover:text-platinum transition-colors duration-300 tracking-wide">Services</a>
+                <a href="#about" class="text-sm text-titanium hover:text-platinum transition-colors duration-300 tracking-wide">About</a>
+                <a href="#testimonials" class="text-sm text-titanium hover:text-platinum transition-colors duration-300 tracking-wide">Testimonials</a>
+                <a href="#contact" class="text-sm text-titanium hover:text-platinum transition-colors duration-300 tracking-wide">Contact</a>
+            </div>
+
+            <!-- CTA + Mobile Toggle -->
+            <div class="flex items-center gap-4">
+                <a href="#contact" class="hidden md:inline-block btn-premium bg-platinum text-dark px-5 py-2.5 text-xs font-semibold tracking-wider uppercase">
+                    Book Now
+                </a>
+                <button id="menuToggle" class="lg:hidden flex flex-col gap-1.5 p-2">
+                    <span class="w-6 h-[1.5px] bg-platinum transition-all duration-300" id="bar1"></span>
+                    <span class="w-6 h-[1.5px] bg-platinum transition-all duration-300" id="bar2"></span>
+                    <span class="w-4 h-[1.5px] bg-platinum transition-all duration-300" id="bar3"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu fixed top-0 right-0 w-full h-full bg-dark z-[999] flex flex-col items-center justify-center gap-8" id="mobileMenu">
+        <a href="#collections" class="text-2xl text-platinum font-inter font-light tracking-wider mobile-nav-link">Collections</a>
+        <a href="#services" class="text-2xl text-platinum font-inter font-light tracking-wider mobile-nav-link">Services</a>
+        <a href="#about" class="text-2xl text-platinum font-inter font-light tracking-wider mobile-nav-link">About</a>
+        <a href="#testimonials" class="text-2xl text-platinum font-inter font-light tracking-wider mobile-nav-link">Testimonials</a>
+        <a href="#contact" class="text-2xl text-platinum font-inter font-light tracking-wider mobile-nav-link">Contact</a>
+        <div class="divider w-32 my-4"></div>
+        <a href="#contact" class="btn-premium bg-platinum text-dark px-8 py-3 text-sm font-semibold tracking-wider uppercase mobile-nav-link">Book Now</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+        <!-- Background elements -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-gunmetal/20 rounded-full blur-[100px]"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-64 h-64 bg-silver/5 rounded-full blur-[80px]"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 text-center">
+            <!-- Top label -->
+            <div class="animate-fadeIn opacity-0 delay-200">
+                <span class="section-label inline-block mb-8 border border-gunmetal px-4 py-2">Est. Houston, Texas</span>
+            </div>
+
+            <!-- Main Headline -->
+            <h1 class="animate-fadeInUp opacity-0 delay-300">
+                <span class="block text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-inter font-black tracking-tighter leading-[0.85] text-platinum">
+                    MASTERMIND
+                </span>
+                <span class="block text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-inter font-black tracking-tighter leading-[0.85] mt-2">
+                    <span class="metallic-text">ALLIANCE</span>
+                </span>
+            </h1>
+
+            <!-- Subtitle -->
+            <div class="animate-fadeIn opacity-0 delay-500 mt-8 max-w-2xl mx-auto">
+                <p class="text-titanium text-base sm:text-lg font-light leading-relaxed tracking-wide">
+                    Premium streetwear. Custom brand development. Limited-edition merchandise. <br class="hidden sm:block">
+                    We don't follow trends. We engineer culture.
+                </p>
+            </div>
+
+            <!-- CTA Buttons -->
+            <div class="animate-fadeInUp opacity-0 delay-700 mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#collections" class="btn-premium bg-platinum text-dark px-8 py-4 text-sm font-semibold tracking-wider uppercase w-full sm:w-auto text-center">
+                    View Collections
+                </a>
+                <a href="#contact" class="btn-premium border border-silver/30 text-platinum px-8 py-4 text-sm font-semibold tracking-wider uppercase w-full sm:w-auto text-center hover:border-silver/60">
+                    Book a Session
+                </a>
+            </div>
+
+            <!-- Stats row -->
+            <div class="animate-fadeIn opacity-0 delay-800 mt-20 grid grid-cols-3 gap-8 max-w-lg mx-auto">
+                <div class="text-center">
+                    <div class="text-2xl sm:text-3xl font-inter font-bold text-platinum counter">500+</div>
+                    <div class="text-xs text-titanium mt-1 tracking-wider uppercase">Brands Built</div>
+                </div>
+                <div class="text-center border-x border-gunmetal">
+                    <div class="text-2xl sm:text-3xl font-inter font-bold text-platinum counter">24/7</div>
+                    <div class="text-xs text-titanium mt-1 tracking-wider uppercase">Available</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-2xl sm:text-3xl font-inter font-bold text-platinum counter">100%</div>
+                    <div class="text-xs text-titanium mt-1 tracking-wider uppercase">Satisfaction</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-fadeIn opacity-0 delay-800">
+            <div class="w-[1px] h-16 bg-gradient-to-b from-transparent via-silver/50 to-transparent relative">
+                <div class="absolute top-0 left-0 w-full h-4 bg-platinum animate-bounce"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marquee Banner -->
+    <section class="py-6 border-y border-gunmetal bg-charcoal/30 overflow-hidden">
+        <div class="marquee-track">
+            <div class="flex items-center gap-8 whitespace-nowrap px-4">
+                <span class="text-xs tracking-[0.3em] uppercase text-titanium font-inter">Premium Streetwear</span>
+                <span class="text-silver">◆</span>
+                <span class="text-xs tracking-[0.3em] uppercase text-titanium font-inter">Custom Branding</span>
+                <span class="text-silver">◆</span>
+                <span class="text-xs tracking-[0.3em] uppercase text-titanium font-inter">Limited Drops</span>
+                <span class="text-silver">◆</span>
+                <span class="text-xs tracking-[0.3em] uppercase text-titanium font-inter">King Titanium</span>
+                <span class="text-silver">◆</span>
+                <span class="text-xs tracking-[0.3em] uppercase text-titanium font-inter">MMAPGX</span>
+                <span class="text-silver">◆</span>
+                <span class="text-xs tracking-[0.3em] uppercase text-titanium font-inter">Houston TX</span>
+                <span class="text-silver">◆</span>
+                <span class="text-xs tracking-[0.3em] uppercase text-titanium font-inter">Brand Development</span>
+                <span class="text-silver">◆</span>
+                <span class="text-xs tracking-[0.3em] uppercase text-titanium font-inter">Exclusive Merchandise</span>
+                <span class="text-silver">◆</span>
+            </div>
+            <div class="flex items-center gap-8 whitespace-nowrap px-4">
+                <span class="text-xs tracking-[0.3em] uppercase text-titanium font-inter">Premium Streetwear</span>
+                <span class="text-silver">◆</span>
+                <span class="text-xs tracking-[0.3em] uppercase text-titanium font-inter">Custom Branding</span>
+                <span class="text-silver">◆</span>
+                <span class="text-xs tracking-[0.3em] uppercase text-titanium font-inter">Limited Drops</span>
+                <span class="text-silver">◆</span>
+                <span class="text-xs tracking-[0.3em] uppercase text-titanium font-inter">King Titanium</span>
+                <span class="text-silver">◆</span>
+                <span class="text-xs tracking-[0.3em] uppercase text-titanium font-inter">MMAPGX</span>
+                <span class="text-silver">◆</span>
+                <span class="text-xs tracking-[0.3em] uppercase text-titanium font-inter">Houston TX</span>
+                <span class="text-silver">◆</span>
+                <span class="text-xs tracking-[0.3em] uppercase text-titanium font-inter">Brand Development</span>
+                <span class="text-silver">◆</span>
+                <span class="text-xs tracking-[0.3em] uppercase text-titanium font-inter">Exclusive Merchandise</span>
+                <span class="text-silver">◆</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Collections -->
+    <section id="collections" class="py-24 lg:py-32 px-6 lg:px-12">
+        <div class="max-w-7xl mx-auto">
+            <!-- Section Header -->
+            <div class="reveal mb-16 lg:mb-20">
+                <span class="section-label">Featured Drops</span>
+                <h2 class="text-4xl sm:text-5xl lg:text-6xl font-inter font-black tracking-tight text-platinum mt-4">
+                    Latest Collections
+                </h2>
+                <p class="text-titanium mt-4 max-w-xl text-base font-light leading-relaxed">
+                    Each piece engineered for dominance. Limited runs. No restocks. Once it's gone, it's gone.
+                </p>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                <!-- Product 1 -->
+                <div class="product-card reveal group cursor-pointer" style="transition-delay: 0.1s">
+                    <div class="relative aspect-[3/4] img-placeholder overflow-hidden">
+                        <div class="product-image w-full h-full bg-gradient-to-br from-gunmetal to-dark flex items-center justify-center">
+                            <div class="text-center z-10">
+                                <div class="text-4xl font-inter font-black text-silver/20">KT</div>
+                                <div class="text-xs tracking-[0.3em] uppercase text-titanium mt-2">King Titanium</div>
+                            </div>
+                        </div>
+                        <div class="product-overlay absolute inset-0 bg-black/60 flex items-center justify-center">
+                            <span class="text-sm tracking-[0.2em] uppercase text-platinum border border-platinum/50 px-6 py-3">View Details</span>
+                        </div>
+                        <div class="absolute top-4 left-4">
+                            <span class="text-[10px] tracking-[0.2em] uppercase bg-platinum text-dark px-3 py-1 font-semibold">New Drop</span>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <h3 class="text-lg font-inter font-semibold text-platinum tracking-wide">King Titanium Hoodie</h3>
+                        <p class="text-titanium text-sm mt-1">Limited Edition • Premium Cotton</p>
+                        <div class="flex items-center justify-between mt-3">
+                            <span class="text-platinum font-semibold">$89.99</span>
+                            <span class="text-xs text-titanium tracking-wider uppercase">Sold Out Soon</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card reveal group cursor-pointer" style="transition-delay: 0.2s">
+                    <div class="relative aspect-[3/4] img-placeholder overflow-hidden">
+                        <div class="product-image w-full h-full bg-gradient-to-br from-charcoal to-dark flex items-center justify-center">
+                            <div class="text-center z-10">
+                                <div class="text-4xl font-inter font-black text-silver/20">MM</div>
+                                <div class="text-xs tracking-[0.3em] uppercase text-titanium mt-2">MMAPGX</div>
+                            </div>
+                        </div>
+                        <div class="product-overlay absolute inset-0 bg-black/60 flex items-center justify-center">
+                            <span class="text-sm tracking-[0.2em] uppercase text-platinum border border-platinum/50 px-6 py-3">View Details</span>
+                        </div>
+                        <div class="absolute top-4 left-4">
+                            <span class="text-[10px] tracking-[0.2em] uppercase bg-gold-dim text-platinum px-3 py-1 font-semibold">Limited</span>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <h3 class="text-lg font-inter font-semibold text-platinum tracking-wide">MMAPGX Snapback</h3>
+                        <p class="text-titanium text-sm mt-1">Structured Fit • Embroidered</p>
+                        <div class="flex items-center justify-between mt-3">
+                            <span class="text-platinum font-semibold">$45.00</span>
+                            <span class="text-xs text-titanium tracking-wider uppercase">24 Left</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card reveal group cursor-pointer" style="transition-delay: 0.3s">
+                    <div class="relative aspect-[3/4] img-placeholder overflow-hidden">
+                        <div class="product-image w-full h-full bg-gradient-to-br from-gunmetal/50 to-charcoal flex items-center justify-center">
+                            <div class="text-center z-10">
+                                <div class="text-4xl font-inter font-black text-silver/20">⚡</div>
+                                <div class="text-xs tracking-[0.3em] uppercase text-titanium mt-2">Streetwear</div>
+                            </div>
+                        </div>
+                        <div class="product-overlay absolute inset-0 bg-black/60 flex items-center justify-center">
+                            <span class="text-sm tracking-[0.2em] uppercase text-platinum border border-platinum/50 px-6 py-3">View Details</span>
+                        </div>
+                        <div class="absolute top-4 left-4">
+                            <span class="text-[10px] tracking-[0.2em] uppercase bg-silver/90 text-dark px-3 py-1 font-semibold">Exclusive</span>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <h3 class="text-lg font-inter font-semibold text-platinum tracking-wide">Premium Street Tee</h3>
+                        <p class="text-titanium text-sm mt-1">Heavyweight • Oversized Fit</p>
+                        <div class="flex items-center justify-between mt-3">
+                            <span class="text-platinum font-semibold">$55.00</span>
+                            <span class="text-xs text-titanium tracking-wider uppercase">Low Stock</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card reveal group cursor-pointer" style="transition-delay: 0.15s">
+                    <div class="relative aspect-[3/4] img-placeholder overflow-hidden">
+                        <div class="product-image w-full h-full bg-gradient-to-br from-titanium/20 to-dark flex items-center justify-center">
+                            <div class="text-center z-10">
+                                <div class="text-4xl font-inter font-black text-silver/20">MA</div>
+                                <div class="text-xs tracking-[0.3em] uppercase text-titanium mt-2">Merchandise</div>
+                            </div>
+                        </div>
+                        <div class="product-overlay absolute inset-0 bg-black/60 flex items-center justify-center">
+                            <span class="text-sm tracking-[0.2em] uppercase text-platinum border border-platinum/50 px-6 py-3">View Details</span>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <h3 class="text-lg font-inter font-semibold text-platinum tracking-wide">Mastermind Crewneck</h3>
+                        <p class="text-titanium text-sm mt-1">Heavy Fleece • Puff Print</p>
+                        <div class="flex items-center justify-between mt-3">
+                            <span class="text-platinum font-semibold">$75.00</span>
+                            <span class="text-xs text-titanium tracking-wider uppercase">In Stock</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="product-card reveal group cursor-pointer" style="transition-delay: 0.25s">
+                    <div class="relative aspect-[3/4] img-placeholder overflow-hidden">
+                        <div class="product-image w-full h-full bg-gradient-to-b from-charcoal to-dark flex items-center justify-center">
+                            <div class="text-center z-10">
+                                <div class="text-4xl font-inter font-black text-silver/20">★</div>
+                                <div class="text-xs tracking-[0.3em] uppercase text-titanium mt-2">Accessories</div>
+                            </div>
+                        </div>
+                        <div class="product-overlay absolute inset-0 bg-black/60 flex items-center justify-center">
+                            <span class="text-sm tracking-[0.2em] uppercase text-platinum border border-platinum/50 px-6 py-3">View Details</span>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <h3 class="text-lg font-inter font-semibold text-platinum tracking-wide">Branded Tote Bag</h3>
+                        <p class="text-titanium text-sm mt-1">Canvas • Screen Printed</p>
+                        <div class="flex items-center justify-between mt-3">
+                            <span class="text-platinum font-semibold">$35.00</span>
+                            <span class="text-xs text-titanium tracking-wider uppercase">Limited Run</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 6 - Coming Soon -->
+                <div class="product-card reveal group cursor-pointer relative" style="transition-delay: 0.35s">
+                    <div class="relative aspect-[3/4] img-placeholder overflow-hidden">
+                        <div class="product-image w-full h-full bg-dark flex items-center justify-center border border-dashed border-gunmetal">
+                            <div class="text-center z-10">
+                                <div class="text-3xl font-inter font-black text-silver/10">?</div>
+                                <div class="text-xs tracking-[0.3em] uppercase text-silver/40 mt-2">Coming Soon</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <h3 class="text-lg font-inter font-semibold text-silver/40 tracking-wide">Next Drop</h3>
+                        <p class="text-titanium/50 text-sm mt-1">Sign up for early access</p>
+                        <div class="flex items-center justify-between mt-3">
+                            <span class="text-silver/40 font-semibold text-sm">Notify Me →</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About / Brand Story -->
+    <section id="about" class="py-24 lg:py-32 px-6 lg:px-12 relative overflow-hidden">
+        <div class="absolute inset-0">
+            <div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-gunmetal to-transparent"></div>
+            <div class="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-gunmetal to-transparent"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+                <!-- Left: Text -->
+                <div class="reveal-left">
+                    <span class="section-label">The Movement</span>
+                    <h2 class="text-4xl sm:text-5xl lg:text-6xl font-inter font-black tracking-tight text-platinum mt-4 leading-[0.9]">
+                        Built From<br>
+                        <span class="metallic-text">The Ground Up</span>
+                    </h2>
+                    <div class="mt-8 space-y-5">
+                        <p class="text-titanium leading-relaxed font-light">
+                            Mastermind Alliance Publishing Group isn't just a brand — it's an ecosystem. Born in Houston, Texas, we operate at the intersection of publishing, fashion, and cultural influence.
+                        </p>
+                        <p class="text-titanium leading-relaxed font-light">
+                            From brand development to premium streetwear, every product we touch carries the DNA of excellence. Our MMAPGX line and King Titanium collections represent the pinnacle of underground luxury.
+                        </p>
+                        <p class="text-titanium leading-relaxed font-light">
+                            We serve creators, entrepreneurs, and visionaries who refuse to settle for average. Every stitch, every design, every decision — intentional.
+                        </p>
+                    </div>
+                    <div class="mt-10 flex flex-wrap gap-4">
+                        <a href="#services" class="btn-premium bg-platinum text-dark px-6 py-3 text-xs font-semibold tracking-wider uppercase">Our Services</a>
+                        <a href="#contact" class="btn-premium border border-silver/30 text-platinum px-6 py-3 text-xs font-semibold tracking-wider uppercase hover:border-silver/60">Get In Touch</a>
+                    </div>
+                </div>
+
+                <!-- Right: Visual -->
+                <div class="reveal-right">
+                    <div class="relative">
+                        <div class="aspect-[4/5] img-placeholder bg-gradient-to-br from-gunmetal/40 to-dark">
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="text-center">
+                                    <div class="text-8xl font-inter font-black text-silver/10 leading-none">MA</div>
+                                    <div class="text-sm tracking-[0.5em] uppercase text-silver/30 mt-4">Publishing Group</div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Floating element -->
+                        <div class="absolute -bottom-6 -left-6 bg-charcoal border border-gunmetal p-6 max-w-[200px]">
+                            <div class="text-3xl font-inter font-bold text-platinum">TX</div>
+                            <div class="text-xs text-titanium mt-1 tracking-wider">Houston Based<br>Global Reach</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 lg:py-32 px-6 lg:px-12">
+        <div class="max-w-7xl mx-auto">
+            <!-- Section Header -->
+            <div class="reveal text-center mb-16 lg:mb-20">
+                <span class="section-label">What We Do</span>
+                <h2 class="text-4xl sm:text-5xl lg:text-6xl font-inter font-black tracking-tight text-platinum mt-4">
+                    Our Services
+                </h2>
+                <p class="text-titanium mt-4 max-w-2xl mx-auto text-base font-light leading-relaxed">
+                    End-to-end creative solutions for brands that demand respect. Every service delivered with precision and purpose.
+                </p>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Service 1 -->
+                <div class="service-card reveal rounded-sm p-8 lg:p-10" style="transition-delay: 0.1s">
+                    <div class="w-12 h-12 border border-silver/20 flex items-center justify-center mb-6">
+                        <svg class="w-5 h-5 text-silver" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-inter font-bold text-platinum tracking-wide">Brand Development</h3>
+                    <p class="text-titanium mt-3 text-sm leading-relaxed font-light">
+                        Complete brand identity systems. From concept to execution — logos, style guides, visual language, and market positioning.
+                    </p>
+                    <div class="mt-6 flex items-center gap-2 text-sm text-silver">
+                        <span>Learn More</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card reveal rounded-sm p-8 lg:p-10" style="transition-delay: 0.2s">
+                    <div class="w-12 h-12 border border-silver/20 flex items-center justify-center mb-6">
+                        <svg class="w-5 h-5 text-silver" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-inter font-bold text-platinum tracking-wide">Custom Apparel</h3>
+                    <p class="text-titanium mt-3 text-sm leading-relaxed font-light">
+                        Premium custom clothing. Hoodies, tees, crewnecks — designed and produced with obsessive attention to quality and detail.
+                    </p>
+                    <div class="mt-6 flex items-center gap-2 text-sm text-silver">
+                        <span>Learn More</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card reveal rounded-sm p-8 lg:p-10" style="transition-delay: 0.3s">
+                    <div class="w-12 h-12 border border-silver/20 flex items-center justify-center mb-6">
+                        <svg class="w-5 h-5 text-silver" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-inter font-bold text-platinum tracking-wide">Premium Merchandise</h3>
+                    <p class="text-titanium mt-3 text-sm leading-relaxed font-light">
+                        Limited-edition drops, snapbacks, accessories, and branded products. Each collection tells a story. Scarcity creates demand.
+                    </p>
+                    <div class="mt-6 flex items-center gap-2 text-sm text-silver">
+                        <span>Learn More</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-card reveal rounded-sm p-8 lg:p-10" style="transition-delay: 0.15s">
+                    <div class="w-12 h-12 border border-silver/20 flex items-center justify-center mb-6">
+                        <svg class="w-5 h-5 text-silver" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-inter font-bold text-platinum tracking-wide">Publishing</h3>
+                    <p class="text-titanium mt-3 text-sm leading-relaxed font-light">
+                        Content creation, media production, and publishing services. From digital to print — we bring your message to the world.
+                    </p>
+                    <div class="mt-6 flex items-center gap-2 text-sm text-silver">
+                        <span>Learn More</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="service-card reveal rounded-sm p-8 lg:p-10" style="transition-delay: 0.25s">
+                    <div class="w-12 h-12 border border-silver/20 flex items-center justify-center mb-6">
+                        <svg class="w-5 h-5 text-silver" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5m.75-9l3-3 2.148 2.148A12.061 12.061 0 0116.5 7.605"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-inter font-bold text-platinum tracking-wide">Creative Consulting</h3>
+                    <p class="text-titanium mt-3 text-sm leading-relaxed font-light">
+                        Strategic creative direction for brands ready to level up. Market analysis, positioning, and campaign development.
+                    </p>
+                    <div class="mt-6 flex items-center gap-2 text-sm text-silver">
+                        <span>Learn More</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="service-card reveal rounded-sm p-8 lg:p-10" style="transition-delay: 0.35s">
+                    <div class="w-12 h-12 border border-silver/20 flex items-center justify-center mb-6">
+                        <svg class="w-5 h-5 text-silver" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-inter font-bold text-platinum tracking-wide">Streetwear Design</h3>
+                    <p class="text-titanium mt-3 text-sm leading-relaxed font-light">
+                        Original streetwear designs from concept to production. Cut & sew, graphic design, and full collection development.
+                    </p>
+                    <div class="mt-6 flex items-center gap-2 text-sm text-silver">
+                        <span>Learn More</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 lg:py-32 px-6 lg:px-12 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-charcoal/50 via-dark to-charcoal/50"></div>
+        <div class="absolute inset-0">
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-silver/3 rounded-full blur-[120px]"></div>
+        </div>
+
+        <div class="max-w-4xl mx-auto relative z-10 text-center reveal">
+            <span class="section-label">Ready to Elevate?</span>
+            <h2 class="text-4xl sm:text-5xl lg:text-7xl font-inter font-black tracking-tight text-platinum mt-4 leading-[0.9]">
+                Stop Playing<br>
+                <span class="metallic-text">Start Dominating</span>
+            </h2>
+            <p class="text-titanium mt-6 text-lg font-light max-w-xl mx-auto leading-relaxed">
+                Whether you need a full brand overhaul or limited-edition merchandise, we deliver results that demand attention.
+            </p>
+            <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#contact" class="btn-premium bg-platinum text-dark px-10 py-4 text-sm font-bold tracking-wider uppercase w-full sm:w-auto">
+                    Schedule a Consultation
+                </a>
+                <a href="tel:+18324831696" class="btn-premium border border-silver/30 text-platinum px-10 py-4 text-sm font-semibold tracking-wider uppercase w-full sm:w-auto hover:border-silver/60">
+                    Call Now: (832) 483-1696
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-24 lg:py-32 px-6 lg:px-12">
+        <div class="max-w-7xl mx-auto">
+            <div class="reveal text-center mb-16">
+                <span class="section-label">Social Proof</span>
+                <h2 class="text-4xl sm:text-5xl lg:text-6xl font-inter font-black tracking-tight text-platinum mt-4">
+                    What They Say
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card reveal rounded-sm p-8" style="transition-delay: 0.1s">
+                    <div class="flex gap-1 mb-4">
+                        <svg class="w-4 h-4 text-gold-dim" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-gold-dim" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-gold-dim" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-gold-dim" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-gold-dim" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    </div>
+                    <p class="text-platinum/80 text-sm leading-relaxed font-light italic">
+                        "MMAPG completely transformed my brand. The merch quality is insane — my customers can't stop ordering. These guys understand the game."
+                    </p>
+                    <div class="mt-6 flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-gunmetal flex items-center justify-center">
+                            <span class="text-xs font-bold text-silver">JT</span>
+                        </div>
+                        <div>
+                            <div class="text-sm font-semibold text-platinum">Jordan T.</div>
+                            <div class="text-xs text-titanium">Brand Owner, Houston</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card reveal rounded-sm p-8" style="transition-delay: 0.2s">
+                    <div class="flex gap-1 mb-4">
+                        <svg class="w-4 h-4 text-gold-dim" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-gold-dim" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-gold-dim" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-gold-dim" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-gold-dim" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    </div>
+                    <p class="text-platinum/80 text-sm leading-relaxed font-light italic">
+                        "The King Titanium collection is next level. Quality, design, the whole experience — 10/10. They're available 24/7 and the attention to detail is unmatched."
+                    </p>
+                    <div class="mt-6 flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-gunmetal flex items-center justify-center">
+                            <span class="text-xs font-bold text-silver">MR</span>
+                        </div>
+                        <div>
+                            <div class="text-sm font-semibold text-platinum">Marcus R.</div>
+                            <div class="text-xs text-titanium">Artist & Entrepreneur</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card reveal rounded-sm p-8" style="transition-delay: 0.3s">
+                    <div class="flex gap-1 mb-4">
+                        <svg class="w-4 h-4 text-gold-dim" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-gold-dim" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-gold-dim" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-gold-dim" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-gold-dim" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    </div>
+                    <p class="text-platinum/80 text-sm leading-relaxed font-light italic">
+                        "From snapbacks to full brand packages — MMAPG delivers. They took my vision and made it into something my whole community respects. Real ones."
+                    </p>
+                    <div class="mt-6 flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-gunmetal flex items-center justify-center">
+                            <span class="text-xs font-bold text-silver">AW</span>
+                        </div>
+                        <div>
+                            <div class="text-sm font-semibold text-platinum">Alexis W.</div>
+                            <div class="text-xs text-titanium">Content Creator</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="py-24 lg:py-32 px-6 lg:px-12 bg-charcoal/20">
+        <div class="max-w-7xl mx-auto">
+            <div class="reveal text-center mb-16">
+                <span class="section-label">The Process</span>
+                <h2 class="text-4xl sm:text-5xl lg:text-6xl font-inter font-black tracking-tight text-platinum mt-4">
+                    How It Works
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-12">
+                <div class="reveal text-center md:text-left" style="transition-delay: 0.1s">
+                    <div class="text-5xl font-inter font-black text-silver/10">01</div>
+                    <h3 class="text-lg font-inter font-bold text-platinum mt-2">Connect</h3>
+                    <p class="text-titanium text-sm mt-2 font-light leading-relaxed">Reach out via phone, appointment, or Cash App. Tell us your vision.</p>
+                </div>
+                <div class="reveal text-center md:text-left" style="transition-delay: 0.2s">
+                    <div class="text-5xl font-inter font-black text-silver/10">02</div>
+                    <h3 class="text-lg font-inter font-bold text-platinum mt-2">Strategize</h3>
+                    <p class="text-titanium text-sm mt-2 font-light leading-relaxed">We map out your brand blueprint. Every detail considered and intentional.</p>
+                </div>
+                <div class="reveal text-center md:text-left" style="transition-delay: 0.3s">
+                    <div class="text-5xl font-inter font-black text-silver/10">03</div>
+                    <h3 class="text-lg font-inter font-bold text-platinum mt-2">Create</h3>
+                    <p class="text-titanium text-sm mt-2 font-light leading-relaxed">Design, develop, and produce with obsessive quality standards.</p>
+                </div>
+                <div class="reveal text-center md:text-left" style="transition-delay: 0.4s">
+                    <div class="text-5xl font-inter font-black text-silver/10">04</div>
+                    <h3 class="text-lg font-inter font-bold text-platinum mt-2">Dominate</h3>
+                    <p class="text-titanium text-sm mt-2 font-light leading-relaxed">Launch with impact. Your brand enters the conversation at the top.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 lg:py-32 px-6 lg:px-12 relative">
+        <div class="absolute inset-0">
+            <div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-gunmetal to-transparent"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+                <!-- Left: Info -->
+                <div class="reveal-left">
+                    <span class="section-label">Get In Touch</span>
+                    <h2 class="text-4xl sm:text-5xl lg:text-6xl font-inter font-black tracking-tight text-platinum mt-4 leading-[0.9]">
+                        Let's Build<br>
+                        <span class="metallic-text">Something Real</span>
+                    </h2>
+                    <p class="text-titanium mt-6 text-base font-light leading-relaxed">
+                        Ready to elevate your brand? Schedule a consultation or reach out directly. We're available around the clock.
+                    </p>
+
+                    <div class="mt-10 space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 border border-gunmetal flex items-center justify-center flex-shrink-0 mt-1">
+                                <svg class="w-4 h-4 text-silver" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="text-sm font-semibold text-platinum">Location</div>
+                                <div class="text-sm text-titanium mt-1">12170 Almeda Rd, Houston, TX 77045</div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 border border-gunmetal flex items-center justify-center flex-shrink-0 mt-1">
+                                <svg class="w-4 h-4 text-silver" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="text-sm font-semibold text-platinum">Phone</div>
+                                <a href="tel:+18324831696" class="text-sm text-titanium mt-1 hover:text-platinum transition-colors">+1 (832) 483-1696</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 border border-gunmetal flex items-center justify-center flex-shrink-0 mt-1">
+                                <svg class="w-4 h-4 text-silver" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="text-sm font-semibold text-platinum">Availability</div>
+                                <div class="text-sm text-titanium mt-1">24/7 • By Appointment</div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 border border-gunmetal flex items-center justify-center flex-shrink-0 mt-1">
+                                <svg class="w-4 h-4 text-silver" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="text-sm font-semibold text-platinum">Payment</div>
+                                <div class="text-sm text-titanium mt-1">Cash App: $evanmmarsh</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Form -->
+                <div class="reveal-right">
+                    <form class="space-y-6" id="contactForm">
+                        <div>
+                            <label class="text-xs tracking-[0.2em] uppercase text-titanium mb-2 block">Name</label>
+                            <input type="text" placeholder="Your full name" class="w-full bg-transparent border-b border-gunmetal py-3 text-platinum text-sm placeholder-titanium/50 focus:outline-none focus:border-silver transition-colors">
+                        </div>
+                        <div>
+                            <label class="text-xs tracking-[0.2em] uppercase text-titanium mb-2 block">Email</label>
+                            <input type="email" placeholder="your@email.com" class="w-full bg-transparent border-b border-gunmetal py-3 text-platinum text-sm placeholder-titanium/50 focus:outline-none focus:border-silver transition-colors">
+                        </div>
+                        <div>
+                            <label class="text-xs tracking-[0.2em] uppercase text-titanium mb-2 block">Phone</label>
+                            <input type="tel" placeholder="(xxx) xxx-xxxx" class="w-full bg-transparent border-b border-gunmetal py-3 text-platinum text-sm placeholder-titanium/50 focus:outline-none focus:border-silver transition-colors">
+                        </div>
+                        <div>
+                            <label class="text-xs tracking-[0.2em] uppercase text-titanium mb-2 block">Service Needed</label>
+                            <select class="w-full bg-transparent border-b border-gunmetal py-3 text-titanium text-sm focus:outline-none focus:border-silver transition-colors appearance-none">
+                                <option value="" class="bg-dark">Select a service</option>
+                                <option value="brand" class="bg-dark">Brand Development</option>
+                                <option value="apparel" class="bg-dark">Custom Apparel</option>
+                                <option value="merch" class="bg-dark">Premium Merchandise</option>
+                                <option value="publishing" class="bg-dark">Publishing</option>
+                                <option value="consulting" class="bg-dark">Creative Consulting</option>
+                                <option value="other" class="bg-dark">Other</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="text-xs tracking-[0.2em] uppercase text-titanium mb-2 block">Message</label>
+                            <textarea rows="4" placeholder="Tell us about your project..." class="w-full bg-transparent border-b border-gunmetal py-3 text-platinum text-sm placeholder-titanium/50 focus:outline-none focus:border-silver transition-colors resize-none"></textarea>
+                        </div>
+                        <button type="submit" class="btn-premium bg-platinum text-dark w-full py-4 text-sm font-bold tracking-wider uppercase mt-8">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-16 lg:py-20 px-6 lg:px-12 border-t border-gunmetal">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
+                <!-- Brand -->
+                <div class="lg:col-span-1">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-8 h-8 border border-silver/30 flex items-center justify-center">
+                            <span class="text-platinum font-inter font-bold text-xs">M</span>
+                        </div>
+                        <span class="text-platinum font-inter font-semibold tracking-[0.15em] text-sm">MMAPG</span>
+                    </div>
+                    <p class="text-titanium text-sm font-light leading-relaxed">
+                        Mastermind Alliance Publishing Group. Premium streetwear & creative services from Houston, Texas.
+                    </p>
+                    <div class="flex gap-4 mt-6">
+                        <a href="#" class="w-9 h-9 border border-gunmetal flex items-center justify-center hover:border-silver/50 transition-colors">
+                            <svg class="w-4 h-4 text-titanium" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        </a>
+                        <a href="#" class="w-9 h-9 border border-gunmetal flex items-center justify-center hover:border-silver/50 transition-colors">
+                            <svg class="w-4 h-4 text-titanium" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+                        </a>
+                        <a href="#" class="w-9 h-9 border border-gunmetal flex items-center justify-center hover:border-silver/50 transition-colors">
+                            <svg class="w-4 h-4 text-titanium" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.88 2.89 2.89 0 01-2.88-2.88 2.89 2.89 0 012.88-2.88c.28 0 .54.04.79.1V9.4a6.33 6.33 0 00-.79-.05A6.34 6.34 0 003.15 15.7a6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.34-6.34V9.01a8.16 8.16 0 004.76 1.52v-3.4a4.85 4.85 0 01-1-.44z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-xs tracking-[0.2em] uppercase text-platinum font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#collections" class="text-sm text-titanium hover:text-platinum transition-colors font-light">Collections</a></li>
+                        <li><a href="#services" class="text-sm text-titanium hover:text-platinum transition-colors font-light">Services</a></li>
+                        <li><a href="#about" class="text-sm text-titanium hover:text-platinum transition-colors font-light">About</a></li>
+                        <li><a href="#testimonials" class="text-sm text-titanium hover:text-platinum transition-colors font-light">Testimonials</a></li>
+                        <li><a href="#contact" class="text-sm text-titanium hover:text-platinum transition-colors font-light">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="text-xs tracking-[0.2em] uppercase text-platinum font-semibold mb-4">Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-sm text-titanium hover:text-platinum transition-colors font-light">Brand Development</a></li>
+                        <li><a href="#" class="text-sm text-titanium hover:text-platinum transition-colors font-light">Custom Apparel</a></li>
+                        <li><a href="#" class="text-sm text-titanium hover:text-platinum transition-colors font-light">Premium Merchandise</a></li>
+                        <li><a href="#" class="text-sm text-titanium hover:text-platinum transition-colors font-light">Publishing</a></li>
+                        <li><a href="#" class="text-sm text-titanium hover:text-platinum transition-colors font-light">Creative Consulting</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-xs tracking-[0.2em] uppercase text-platinum font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-3">
+                        <li class="text-sm text-titanium font-light">12170 Almeda Rd</li>
+                        <li class="text-sm text-titanium font-light">Houston, TX 77045</li>
+                        <li><a href="tel:+18324831696" class="text-sm text-titanium hover:text-platinum transition-colors font-light">+1 (832) 483-1696</a></li>
+                        <li class="text-sm text-titanium font-light">Cash App: $evanmmarsh</li>
+                        <li class="text-sm text-titanium font-light">Open 24/7 • By Appointment</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom -->
+            <div class="divider mt-12 mb-8"></div>
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="text-xs text-titanium font-light tracking-wide">
+                    © 2024 Mastermind Alliance Publishing Group. All rights reserved.
+                </p>
+                <div class="flex items-center gap-6">
+                    <span class="text-xs text-titanium/50 tracking-wider">MMAPG</span>
+                    <span class="text-xs text-titanium/50 tracking-wider">MMAPGX</span>
+                    <span class="text-xs text-titanium/50 tracking-wider">KING TITANIUM</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Loader
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loader').classList.add('hidden');
+            }, 1800);
         });
-      });
 
-      // simple tilt effect for product visuals
-      document.querySelectorAll('.product-visual').forEach(el=>{
-        el.addEventListener('mousemove', (ev)=>{
-          const r = el.getBoundingClientRect();
-          const x = (ev.clientX - r.left) / r.width - 0.5;
-          const y = (ev.clientY - r.top) / r.height - 0.5;
-          el.style.transform = `rotateX(${ -y * 6 }deg) rotateY(${ x * 10 }deg) translateZ(6px)`;
+        // Custom cursor
+        const cursor = document.getElementById('cursor');
+        if (window.innerWidth >= 1024) {
+            document.addEventListener('mousemove', (e) => {
+                cursor.style.left = e.clientX - 10 + 'px';
+                cursor.style.top = e.clientY - 10 + 'px';
+            });
+
+            const hoverElements = document.querySelectorAll('a, button, .product-card, .service-card');
+            hoverElements.forEach(el => {
+                el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+                el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+            });
+        }
+
+        // Mobile menu
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const bar1 = document.getElementById('bar1');
+        const bar2 = document.getElementById('bar2');
+        const bar3 = document.getElementById('bar3');
+        let menuOpen = false;
+
+        menuToggle.addEventListener('click', () => {
+            menuOpen = !menuOpen;
+            if (menuOpen) {
+                mobileMenu.classList.add('open');
+                bar1.style.transform = 'rotate(45deg) translate(4px, 4px)';
+                bar2.style.opacity = '0';
+                bar3.style.transform = 'rotate(-45deg) translate(4px, -4px)';
+                bar3.style.width = '24px';
+                document.body.style.overflow = 'hidden';
+            } else {
+                mobileMenu.classList.remove('open');
+                bar1.style.transform = '';
+                bar2.style.opacity = '1';
+                bar3.style.transform = '';
+                bar3.style.width = '16px';
+                document.body.style.overflow = '';
+            }
         });
-        el.addEventListener('mouseleave', ()=> el.style.transform = 'rotateX(0) rotateY(0) translateZ(0)');
-      });
 
-      // privacy: don't allow accidental drag of images (none present) but ensure links open in new window where necessary
-      document.querySelectorAll('a[target="_blank"]').forEach(a => a.rel = 'noopener noreferrer');
+        // Close mobile menu on link click
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                menuOpen = false;
+                mobileMenu.classList.remove('open');
+                bar1.style.transform = '';
+                bar2.style.opacity = '1';
+                bar3.style.transform = '';
+                bar3.style.width = '16px';
+                document.body.style.overflow = '';
+            });
+        });
 
-      // micro-analytics: log interactions to console (simulate)
-      ['bookBtn','orderNow','watchBtn','viewCollection'].forEach(id=>{
-        if(document.getElementById(id)) document.getElementById(id).addEventListener('click', ()=>console.log('interaction:', id));
-      });
+        // Scroll reveal
+        const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
 
-      // Ensure focus outlines for keyboard users
-      let mouseDown = false;
-      document.addEventListener('mousedown', ()=> mouseDown = true);
-      document.addEventListener('keydown', ()=> mouseDown = false);
-      document.addEventListener('focusin', (e)=>{
-        if(mouseDown) e.target.classList.add('no-focus-ring');
-        else e.target.classList.remove('no-focus-ring');
-      });
+        const revealOnScroll = () => {
+            const windowHeight = window.innerHeight;
+            revealElements.forEach(el => {
+                const elementTop = el.getBoundingClientRect().top;
+                const revealPoint = 100;
+                if (elementTop < windowHeight - revealPoint) {
+                    el.classList.add('active');
+                }
+            });
+        };
 
-    })();
-  </script>
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+
+        // Navbar background on scroll
+        const nav = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.style.background = 'rgba(10, 10, 10, 0.95)';
+            } else {
+                nav.style.background = 'rgba(10, 10, 10, 0.85)';
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Form handling
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = e.target.querySelector('button[type="submit"]');
+            btn.textContent = 'Message Sent ✓';
+            btn.style.background = '#2a5a2a';
+            btn.style.color = '#e5e4e2';
+            setTimeout(() => {
+                btn.textContent = 'Send Message';
+                btn.style.background = '';
+                btn.style.color = '';
+                e.target.reset();
+            }, 3000);
+        });
+
+        // Parallax effect for hero background elements
+        window.addEventListener('scroll', () => {
+            const scrolled = window.scrollY;
+            const heroBg = document.querySelector('.hero-gradient');
+            if (heroBg && scrolled < window.innerHeight) {
+                const elements = heroBg.querySelectorAll('.absolute');
+                elements.forEach((el, i) => {
+                    const speed = 0.3 + (i * 0.1);
+                    el.style.transform = `translateY(${scrolled * speed}px)`;
+                });
+            }
+        });
+    </script>
 </body>
 </html>
